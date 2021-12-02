@@ -1,42 +1,30 @@
 {
-  "name": "my-app",
-  "version": "0.1.0",
+  "name": "recipe-app",
+  "version": "1.0.0",
   "private": true,
-  "dependencies": {
-    "@emotion/react": "^11.5.0",
-    "@emotion/styled": "^11.3.0",
-    "@mui/icons-material": "^5.1.0",
-    "@mui/material": "^5.1.0",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "4.0.3",
-    "web-vitals": "^1.0.1"
-  },
+  "author": "Leo Li",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "description": "Recipe App Cloud Computing Project 2",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "build": "yarn workspace client build",
+    "start": "concurrently \"yarn workspace client start\" \"yarn workspace server dev\"",
+    "test-server": "yarn workspace server test"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "eslint": "^7.11.0",
+    "eslint-config-prettier": "^6.12.0",
+    "husky": "^4.3.0",
+    "prettier": "2.1.2",
+    "pretty-quick": "^3.0.2"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {}
 }
