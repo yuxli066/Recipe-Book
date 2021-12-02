@@ -11,7 +11,8 @@
   "scripts": {
     "build": "yarn workspace client build",
     "start": "concurrently \"yarn workspace client start\" \"yarn workspace server dev\"",
-    "test-server": "yarn workspace server nodemon"
+    "start-client": "yarn workspace client start",
+    "start-server": "yarn workspace server start"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
