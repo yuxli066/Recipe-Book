@@ -6,8 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "nodemon": "./node_modules/nodemon/bin/nodemon.js index",
-    "test": "mocha ./tests"
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js index"
   },
   "dependencies": {
     "compose-middleware": "^5.0.1",
@@ -15,6 +14,7 @@
     "express": "^4.17.1",
     "express-async-handler": "^1.2.0",
     "http-status": "^1.4.2",
+    "ip": "^1.1.5",
     "log4js": "^6.1.2",
     "mongoose": "^6.0.11",
     "morgan": "^1.9.1",
