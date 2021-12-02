@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "nodemon": "./node_modules/nodemon/bin/nodemon.js index"
+    "dev": "./node_modules/nodemon/bin/nodemon.js index"
   },
   "dependencies": {
     "compose-middleware": "^5.0.1",
@@ -20,6 +20,7 @@
     "morgan": "^1.9.1",
     "multer": "^1.4.3",
     "nodemailer": "^6.7.0",
+    "nodemon": "^2.0.15",
     "socket.io": "^4.3.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.3"
