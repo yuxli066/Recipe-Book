@@ -14,6 +14,7 @@ class RootCtrl {
   static async getRecipes(req, res) {
     return res.json([
       {
+        image: "image path placeholder",
         recipeName: "Name1 Placeholder",
         description: "Description Placeholder",
         rating: 5,
@@ -26,6 +27,7 @@ class RootCtrl {
         },
       },
       {
+        image: "image path placeholder",
         recipeName: "Name2 Placeholder",
         description: "Description Placeholder",
         rating: 5,
@@ -38,6 +40,7 @@ class RootCtrl {
         },
       },
       {
+        image: "image path placeholder",
         recipeName: "Name3 Placeholder",
         description: "Description Placeholder",
         rating: 5,
@@ -50,6 +53,7 @@ class RootCtrl {
         },
       },
       {
+        image: "image path placeholder",
         recipeName: "Name4 Placeholder",
         description: "Description Placeholder",
         rating: 5,
@@ -62,6 +66,7 @@ class RootCtrl {
         },
       },
       {
+        image: "image path placeholder",
         recipeName: "Name5 Placeholder",
         description: "Description Placeholder",
         rating: 5,
@@ -74,6 +79,7 @@ class RootCtrl {
         },
       },
       {
+        image: "image path placeholder",
         recipeName: "Name6 Placeholder",
         description: "Description Placeholder",
         rating: 5,
