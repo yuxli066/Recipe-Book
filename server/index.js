@@ -10,7 +10,7 @@ global.CustomError = require("./services").CustomError;
 const { port } = configs;
 
 // whitelisted cors urls
-const whitelist = ["http://localhost.com"];
+const whitelist = ["http://localhost:3000"];
 
 // cors policy
 const corsOptions = function (req, callback) {

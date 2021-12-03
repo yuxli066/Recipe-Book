@@ -5,4 +5,4 @@ export const getRecipes = httpCommon
   .then((res) => {
     if (res.status === 200) return res.data;
   })
-  .catch((err) => throw err);
+  .catch((err) => console.log(err));

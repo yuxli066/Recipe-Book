@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -17,12 +17,15 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 // custom comps
 import SearchInput from "../SearchInput";
 
+// services
+import { getRecipes } from "../../services/recipeService";
+
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+        www.leoli.com
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -30,12 +33,18 @@ function Copyright() {
   );
 }
 
-const cards = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
 const theme = createTheme();
 
 export default function FoodAlbum() {
   const [value, setValue] = useState(2);
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    getRecipes.then((recipes) => {
+      setRecipes(recipes);
+    });
+  }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
@@ -76,58 +85,59 @@ export default function FoodAlbum() {
               spacing={2}
               justifyContent="center"
             >
-              <Button variant="contained">Main call to action</Button>
-              <Button variant="outlined">Secondary action</Button>
+              <Button variant="contained">Add New Recipe</Button>
             </Stack>
           </Container>
         </Box>
         <Container sx={{ py: 8 }} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card
-                  sx={{
-                    height: "100%",
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
-                  <CardMedia
-                    component="img"
+            {recipes &&
+              recipes.map((card, index) => (
+                <Grid item key={index} xs={12} sm={6} md={4}>
+                  <Card
                     sx={{
-                      // 16:9
-                      pt: "56.25%",
+                      height: "100%",
+                      display: "flex",
+                      flexDirection: "column",
                     }}
-                    image="https://source.unsplash.com/random"
-                    alt="random"
-                  />
-                  <CardContent sx={{ flexGrow: 1 }}>
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Heading
-                    </Typography>
-                    <Typography>Recipe Description...</Typography>
-                  </CardContent>
-                  <Rating
-                    name="simple-controlled"
-                    value={value}
-                    onChange={(event, newValue) => {
-                      setValue(newValue);
-                    }}
-                  />
-                  <CardActions>
-                    <Button size="small">Read Step by Step</Button>
-                  </CardActions>
-                </Card>
-              </Grid>
-            ))}
+                  >
+                    <CardMedia
+                      component="img"
+                      sx={
+                        {
+                          // 16:9
+                        }
+                      }
+                      image="https://source.unsplash.com/random"
+                      alt="random"
+                    />
+                    <CardContent sx={{ flexGrow: 1 }}>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        Heading
+                      </Typography>
+                      <Typography>Recipe Description...</Typography>
+                    </CardContent>
+                    <Rating
+                      name="simple-controlled"
+                      value={value}
+                      onChange={(event, newValue) => {
+                        setValue(newValue);
+                      }}
+                    />
+                    <CardActions>
+                      <Button size="small">Read Step by Step</Button>
+                    </CardActions>
+                  </Card>
+                </Grid>
+              ))}
           </Grid>
         </Container>
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
         <Typography variant="h6" align="center" gutterBottom>
-          Footer
+          Click here for more!
         </Typography>
         <Typography
           variant="subtitle1"
