@@ -1,0 +1,11 @@
+FROM alpine:latest
+WORKDIR /app
+
+COPY ../package.json .
+COPY ../api/package.json api/package.json
+
+RUN apk add yarn
+RUN yarn install --production
+
+COPY ../api ./api/
+CMD ["yarn ","start-server"]

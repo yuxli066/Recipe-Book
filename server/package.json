@@ -1,8 +1,8 @@
 {
-  "name": "api",
+  "name": "server",
   "private": true,
   "version": "1.0.0",
-  "description": "Just another Node Backend Server adapted from https://github.com/Vladinho10/node-server-template",
+  "description": "Just another Node Backend Server to serve react frontend",
   "main": "index.js",
   "scripts": {
     "start": "node index",
@@ -23,7 +23,6 @@
     "multer": "^1.4.3",
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.15",
-    "socket.io": "^4.3.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.3"
   },
