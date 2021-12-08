@@ -1,11 +1,12 @@
 "use strict";
 const logger = require("log4js").getLogger("ENTRY.index");
 const express = require("express");
-const mongoose = require("mongoose");
 const configs = require("./configs");
 const app = express();
 const server = require("http").createServer(app);
 const cors = require("cors");
+const path = require("path");
+const fallback = require("express-history-api-fallback");
 global.CustomError = require("./services").CustomError;
 const { port } = configs;
 
@@ -27,7 +28,8 @@ app.use(cors(corsOptions));
 app.options("*", cors(corsOptions));
 
 // you can specify a path `${origin}/yourPath` or by default it's `${origin}`
-app.use(express.static(configs.files));
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(fallback('index.html', { root: path.join(__dirname, 'public') }));
 app.use("/", require("./routers"));
 
 server.listen(port, () => logger.info(`app listen ${port} port`));

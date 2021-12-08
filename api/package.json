@@ -14,6 +14,7 @@
     "dotenv-flow": "^3.2.0",
     "express": "^4.17.1",
     "express-async-handler": "^1.2.0",
+    "express-history-api-fallback": "^2.2.1",
     "http-status": "^1.4.2",
     "ip": "^1.1.5",
     "log4js": "^6.1.2",

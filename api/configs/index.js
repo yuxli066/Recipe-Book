@@ -8,11 +8,9 @@ require("./logger-config");
 //     url: `${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
 // };
 const port = process.env.PORT;
-const files = `${rootPath}/files`;
 const uploads = `${rootPath}/uploads`;
 
 module.exports = {
   port,
-  files,
   uploads,
 };

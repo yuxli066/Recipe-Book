@@ -5,14 +5,15 @@
   "author": "Leo Li",
   "workspaces": [
     "client",
-    "server"
+    "server",
+    "api"
   ],
   "description": "Recipe App - Cloud Computing Project 2",
   "scripts": {
     "build": "yarn workspace client build",
-    "start": "concurrently cross-env PORT=5000 \"yarn workspace client start\" \"yarn workspace server dev\"",
+    "start": "concurrently cross-env PORT=5000 \\\"yarn workspace client start\\\" \\\"yarn workspace api start\\\"",
     "start-client": "yarn workspace client start",
-    "start-server": "cross-env PORT=5000 yarn workspace server start"
+    "start-server": "cross-env PORT=5000 yarn workspace api start"
   },
   "devDependencies": {
     "concurrently": "^5.3.0",
