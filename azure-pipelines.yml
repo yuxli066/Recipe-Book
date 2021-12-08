@@ -13,8 +13,8 @@ variables:
   dockerRegistryServiceConnection: "242c63fa-cb21-4f7a-a7ac-5f8bbf566662"
   imageRepository: "apiimage"
   containerRegistry: "recipeapis.azurecr.io"
-  dockerfilePath: "**/deploy/DockerfileApi"
-  projectFolder: "./recipe-app"
+  dockerfilePath: "./deploy/DockerfileApi"
+  projectFolder: "."
   tag: "latest"
 
   # Agent VM image name
