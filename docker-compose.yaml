@@ -5,3 +5,7 @@ services:
     image: clientimage
     ports:
       - "3000:3000"
+  recipeApi:
+    image: apiimage
+    ports:
+      - "5000:5000"
