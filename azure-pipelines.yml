@@ -16,6 +16,7 @@ variables:
   containerRegistry: "recipeapis.azurecr.io"
   dockerfileApiPath: "./deploy/DockerfileApi"
   dockerfileClientPath: "./deploy/DockerfileApi"
+  dockerComposeFile: "./docker-compose.yaml"
   projectFolder: "."
   tag: "latest"
 
@@ -50,3 +51,9 @@ stages:
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
+                - task: AzureWebAppContainer@1
+                  inputs:
+                    azureSubscription: 'Leo subscription(9c134382-1589-4b0f-8488-46676de23b97)'
+                    appName: 'RecipeCookingApp'
+                    containers: '$(containerRegistry)/$(imageClientRepository):$(tag)'
+                    multicontainerConfigFile: $(dockerComposeFile)
