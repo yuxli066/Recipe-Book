@@ -39,10 +39,8 @@ stages:
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
-          - task: AzureFunctionApp@1
+          - task: AzureFunctionAppContainer@1
             inputs:
               azureSubscription: 'Leo subscription(9c134382-1589-4b0f-8488-46676de23b97)'
-              appType: 'functionAppLinux'
               appName: 'RecipeAppApi'
-              package: '$(System.DefaultWorkingDirectory)/**/*.zip'
-              runtimeStack: 'NODE|14'
+              imageName: 'apiimage'
