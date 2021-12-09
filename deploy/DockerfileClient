@@ -25,7 +25,7 @@ COPY --from=build-stage /app/package.json package.json
 COPY server/package.json server/package.json
 RUN yarn install --production
 
-EXPOSE 3000
+EXPOSE 80
 CMD ["yarn","start-client"]
 # =========================== Production Build =========================== #
 
