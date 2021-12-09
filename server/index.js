@@ -11,7 +11,12 @@ global.CustomError = require("./services").CustomError;
 const { port } = configs;
 
 // whitelisted cors urls
-const whitelist = ["http://localhost:3000", "localhost:3000"];
+const whitelist = [
+  "http://localhost:3000",
+  "localhost:3000",
+  "recipecookingapp.azurewebsites.net",
+  "https://recipecookingapp.azurewebsites.net",
+];
 
 // cors policy
 const corsOptions = (req, callback) => {
