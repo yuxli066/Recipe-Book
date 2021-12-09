@@ -33,6 +33,7 @@ stages:
         pool: $(agentPool)
         steps:
           - task: Docker@2
+            displayName: Build and push Client image to container registry
             inputs:
               command: buildAndPush
               repository: $(imageClientRepository)
@@ -40,9 +41,9 @@ stages:
               dockerfile: $(dockerfileClientPath)
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
-                $(tag)      
+                $(tag)
           - task: Docker@2
-            displayName: Build and push an image to container registry
+            displayName: Build and push API image to container registry
             inputs:
               command: buildAndPush
               repository: $(imageApiRepository)
@@ -53,7 +54,7 @@ stages:
                 $(tag)
           - task: AzureWebAppContainer@1
             inputs:
-              azureSubscription: 'Leo subscription(9c134382-1589-4b0f-8488-46676de23b97)'
-              appName: 'RecipeCookingApp'
-              containers: '$(containerRegistry)/$(imageClientRepository):$(tag)'
+              azureSubscription: "Leo subscription(9c134382-1589-4b0f-8488-46676de23b97)"
+              appName: "RecipeCookingApp"
+              containers: "$(containerRegistry)/$(imageClientRepository):$(tag)"
               multicontainerConfigFile: $(dockerComposeFile)
