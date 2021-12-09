@@ -11,9 +11,11 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "242c63fa-cb21-4f7a-a7ac-5f8bbf566662"
-  imageRepository: "apiimage"
+  imageApiRepository: "apiimage"
+  imageClientRepository: "clientimage"
   containerRegistry: "recipeapis.azurecr.io"
-  dockerfilePath: "./deploy/DockerfileApi"
+  dockerfileApiPath: "./deploy/DockerfileApi"
+  dockerfileClientPath: "./deploy/DockerfileApi"
   projectFolder: "."
   tag: "latest"
 
@@ -30,12 +32,21 @@ stages:
         pool: $(agentPool)
         steps:
           - task: Docker@2
+            inputs:
+              command: 'buildAndPush'
+              containerRegistry: $(dockerRegistryServiceConnection)
+              repository: $(imageClientRepository)
+              Dockerfile: $(dockerfileClientPath)
+              buildContext: $(projectFolder)
+              tags: |
+                $(tag)      
+          - task: Docker@2
             displayName: Build and push an image to container registry
             inputs:
               command: buildAndPush
               repository: $(imageRepository)
               buildContext: $(projectFolder)
-              dockerfile: $(dockerfilePath)
+              dockerfile: $(dockerfileApiPath)
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
