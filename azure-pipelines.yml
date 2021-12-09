@@ -15,7 +15,7 @@ variables:
   imageClientRepository: "clientimage"
   containerRegistry: "recipeapis.azurecr.io"
   dockerfileApiPath: "./deploy/DockerfileApi"
-  dockerfileClientPath: "./deploy/DockerfileApi"
+  dockerfileClientPath: "./deploy/DockerfileClient"
   dockerComposeFile: "./docker-compose.yaml"
   projectFolder: "."
   tag: "latest"
