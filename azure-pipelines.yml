@@ -28,7 +28,8 @@ variables:
   tag: "latest"
   registryUsername: "RecipeAPIs"
   registryPassword: "uMae5efq4tOfYIqlPefk1nJp/WK=Y0/t"
-  dnsLabel: "client-01"
+  clientDNSLabel: "client-01"
+  apiDNSLabel: "api-01"
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
@@ -71,7 +72,7 @@ stages:
             displayName: Create Client Container
             inputs:
               targetType: "inline"
-              script: "az container create --name $(clientContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageClientRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)"
+              script: "az container create --name $(clientContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageClientRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(clientDNSLabel) --port $(clientPort)"
           - task: Bash@3
             displayName: Delete API Container
             inputs:
@@ -81,4 +82,4 @@ stages:
             displayName: Create API Container
             inputs:
               targetType: "inline"
-              script: "az container create --name $(apiContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageApiRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)"
+              script: "az container create --name $(apiContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageApiRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(apiDNSLabel) --port $(clientPort)"
