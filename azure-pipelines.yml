@@ -20,15 +20,15 @@ variables:
   dockerfileClientPath: "./deploy/DockerfileClient"
   dockerComposeFile: "./docker-compose.yaml"
   # container names + resource groups
-  clientContainerName: "client-01"
-  apiContainerName: "api-01"
+  clientContainerName: "client"
+  apiContainerName: "api"
   clientPort: 80
   resourceGroup: "CookingApp"
   projectFolder: "."
   tag: "latest"
   registryUsername: "RecipeAPIs"
   registryPassword: "uMae5efq4tOfYIqlPefk1nJp/WK=Y0/t"
-  dnsLabel: "client"
+  dnsLabel: "client-01"
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
