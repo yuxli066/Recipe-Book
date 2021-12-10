@@ -11,14 +11,24 @@ resources:
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: "242c63fa-cb21-4f7a-a7ac-5f8bbf566662"
+  # image names
   imageApiRepository: "apiimage"
   imageClientRepository: "clientimage"
+  # docker file paths
   containerRegistry: "recipeapis.azurecr.io"
   dockerfileApiPath: "./deploy/DockerfileApi"
   dockerfileClientPath: "./deploy/DockerfileClient"
   dockerComposeFile: "./docker-compose.yaml"
+  # container names + resource groups
+  clientContainerName: "client"
+  clientPort: 80
+  apiContainerName: "api"
+  resourceGroup: "CookingApp"
   projectFolder: "."
   tag: "latest"
+  registryUsername: "RecipeAPIs"
+  registryPassword: "uMae5efq4tOfYIqlPefk1nJp/WK=Y0/t"
+  dnsLabel: "client"
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
@@ -52,9 +62,13 @@ stages:
               containerRegistry: $(dockerRegistryServiceConnection)
               tags: |
                 $(tag)
-          - task: AzureWebAppContainer@1
+          - task: Bash@3
+            displayName: Delete Client Container 
             inputs:
-              azureSubscription: "Leo subscription(9c134382-1589-4b0f-8488-46676de23b97)"
-              appName: "RecipeCookingApp"
-              containers: "$(containerRegistry)/$(imageClientRepository):$(tag)"
-              multicontainerConfigFile: $(dockerComposeFile)
+              targetType: 'inline'
+              script: 'az container delete --name $(clientContainerName) --resource-group $(resourceGroup) --yes'
+          - task: Bash@3
+            displayName: Create Client Container
+            inputs:
+              targetType: 'inline'
+              script: 'az container create --name $(clientContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageClientRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)'
