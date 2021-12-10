@@ -21,8 +21,8 @@ variables:
   dockerComposeFile: "./docker-compose.yaml"
   # container names + resource groups
   clientContainerName: "client"
-  clientPort: 80
   apiContainerName: "api"
+  clientPort: 80
   resourceGroup: "CookingApp"
   projectFolder: "."
   tag: "latest"
@@ -63,12 +63,22 @@ stages:
               tags: |
                 $(tag)
           - task: Bash@3
-            displayName: Delete Client Container 
+            displayName: Delete Client Container
             inputs:
-              targetType: 'inline'
-              script: 'az container delete --name $(clientContainerName) --resource-group $(resourceGroup) --yes'
+              targetType: "inline"
+              script: "az container delete --name $(clientContainerName) --resource-group $(resourceGroup) --yes"
           - task: Bash@3
             displayName: Create Client Container
             inputs:
-              targetType: 'inline'
-              script: 'az container create --name $(clientContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageClientRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)'
+              targetType: "inline"
+              script: "az container create --name $(clientContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageClientRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)"
+          - task: Bash@3
+            displayName: Delete API Container
+            inputs:
+              targetType: "inline"
+              script: "az container delete --name $(apiContainerName) --resource-group $(resourceGroup) --yes"
+          - task: Bash@3
+            displayName: Create API Container
+            inputs:
+              targetType: "inline"
+              script: "az container create --name $(apiContainerName) --resource-group $(resourceGroup) --image $(containerRegistry)/$(imageApiRepository):$(tag) --registry-login-server $(containerRegistry) --registry-username $(registryUsername) --registry-password $(registryPassword) --dns-name-label $(dnsLabel) --port $(clientPort)"
