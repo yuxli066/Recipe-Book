@@ -20,8 +20,8 @@ variables:
   dockerfileClientPath: "./deploy/DockerfileClient"
   dockerComposeFile: "./docker-compose.yaml"
   # container names + resource groups
-  clientContainerName: "client"
-  apiContainerName: "api"
+  clientContainerName: "client-01"
+  apiContainerName: "api-01"
   clientPort: 80
   resourceGroup: "CookingApp"
   projectFolder: "."
