@@ -1,0 +1,67 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: client
+  labels:
+    app: recipeapp
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80 # port number that is exposed within the cluster
+      name: client
+      targetPort: 80 # ports that containers are listening on
+    - port: 5000
+      name: api
+      targetPort: 5000
+  selector:
+    app: recipeapp # forward requests to pod's with label of this value
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-client
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: recipeapp
+  template:
+    metadata:
+      labels:
+        app: recipeapp
+    spec:
+      containers:
+        - name: client
+          image: recipeapis.azurecr.io/clientimage:latest
+          ports:
+            - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: recipe-api
+spec:
+  replicas: 3
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: recipeapp
+  template:
+    metadata:
+      labels:
+        app: recipeapp
+    spec:
+      containers:
+        - name: api
+          image: recipeapis.azurecr.io/apiimage:latest
+          ports:
+            - containerPort: 5000
