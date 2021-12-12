@@ -27,8 +27,6 @@ variables:
   tag: "latest"
   registryUsername: "RecipeAPIs"
   registryPassword: "uMae5efq4tOfYIqlPefk1nJp/WK=Y0/t"
-  clientDNSLabel: "client-01"
-  apiDNSLabel: "api-01"
 
   # Agent VM image name
   vmImageName: "ubuntu-latest"
