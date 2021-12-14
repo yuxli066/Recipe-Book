@@ -66,6 +66,36 @@ class AzureSql {
     return this.connection;
   }
 
+  getAllRecipes(callback) {
+    const query =
+      "select imagePath, recipeName, recipeDescription, recipeRating from Recipe";
+    const request = new Request(query, (err, rowCount) => {
+      if (err) {
+        console.error(err.message, "Insert Failed");
+        return callback(err);
+      } else {
+        console.log(`${rowCount} row(s) returned`);
+        callback(null, rowCount);
+      }
+    });
+    let results = [];
+    return new Promise((resolve, reject) => {
+      this.connection
+        .then((dbConnection) => {
+          request.on("row", (column) => {
+            let values = column.map((v) => v.value);
+            results.push(values);
+          });
+          request.on("requestCompleted", () => {
+            resolve(results);
+            dbConnection.close();
+          });
+          dbConnection.execSql(request);
+        })
+        .catch((err) => reject(err));
+    });
+  }
+
   closeConnection() {
     return new Promise((resolve) => {
       this.connection.then((dbConnection) => {
