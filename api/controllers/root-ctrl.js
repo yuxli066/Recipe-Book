@@ -1,97 +1,26 @@
 "use strict";
 const ip = require("ip");
+const databaseService = require("../services/database-srv");
 
 class RootCtrl {
   static async getHealthCheck(req, res) {
     return res.json({
       serviceName: "recipe-service",
-      ipAddress: ip,
+      ipAddress: ip.address(),
       status: "ok",
     });
   }
 
   // TODO: access database here for all recipes
   static async getRecipes(req, res) {
-    return res.json([
-      {
-        image: "image path placeholder",
-        recipeName: "Name1 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-      {
-        image: "image path placeholder",
-        recipeName: "Name2 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-      {
-        image: "image path placeholder",
-        recipeName: "Name3 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-      {
-        image: "image path placeholder",
-        recipeName: "Name4 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-      {
-        image: "image path placeholder",
-        recipeName: "Name5 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-      {
-        image: "image path placeholder",
-        recipeName: "Name6 Placeholder",
-        description: "Description Placeholder",
-        rating: 5,
-        instructions: {
-          1: "step 1",
-          2: "step 2",
-          3: "step 3",
-          4: "step 4",
-          5: "step 5",
-        },
-      },
-    ]);
+    const db = new databaseService();
+    const allRecipes = await db.getAllRecipes((err, rowCount) => {
+      if (err) console.error(err);
+
+      console.log("Row Count:", rowCount);
+    });
+
+    return res.json(allRecipes);
   }
 
   // TODO: save new recipe to database
