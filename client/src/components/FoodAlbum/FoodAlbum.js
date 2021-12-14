@@ -36,7 +36,6 @@ function Copyright() {
 const theme = createTheme();
 
 export default function FoodAlbum() {
-  const [value, setValue] = useState(2);
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
@@ -97,7 +96,7 @@ export default function FoodAlbum() {
                 <Grid item key={index} xs={12} sm={6} md={4}>
                   <Card
                     sx={{
-                      height: "100%",
+                      height: "150px",
                       display: "flex",
                       flexDirection: "column",
                     }}
@@ -109,22 +108,16 @@ export default function FoodAlbum() {
                           // 16:9
                         }
                       }
-                      image="https://source.unsplash.com/random"
+                      image={card.imageUrl}
                       alt="random"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
                       <Typography gutterBottom variant="h5" component="h2">
-                        Heading
+                        {card.name}
                       </Typography>
-                      <Typography>Recipe Description...</Typography>
+                      <Typography>{card.description}</Typography>
                     </CardContent>
-                    <Rating
-                      name="simple-controlled"
-                      value={value}
-                      onChange={(event, newValue) => {
-                        setValue(newValue);
-                      }}
-                    />
+                    <Rating name="simple-controlled" value={card.rating} />
                     <CardActions>
                       <Button size="small">Read Step by Step</Button>
                     </CardActions>
@@ -144,9 +137,7 @@ export default function FoodAlbum() {
           align="center"
           color="text.secondary"
           component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
+        ></Typography>
         <Copyright />
       </Box>
       {/* End footer */}
