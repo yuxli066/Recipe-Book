@@ -70,3 +70,8 @@ stages:
             inputs:
               targetType: "inline"
               script: "kubectl apply -f deployment.yaml"
+          - task: Bash@3
+            displayName: Deploy new images to Kubernetes
+            inputs:
+              targetType: "inline"
+              script: "docker system prune -af"
