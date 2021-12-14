@@ -20,7 +20,16 @@ class RootCtrl {
       console.log("Row Count:", rowCount);
     });
 
-    return res.json(allRecipes);
+    const formattedRecipes = allRecipes.map((recipe) => {
+      return {
+        imageUrl: recipe[0],
+        name: recipe[1],
+        description: recipe[2],
+        rating: recipe[3],
+      };
+    });
+
+    return res.json(formattedRecipes);
   }
 
   // TODO: save new recipe to database
