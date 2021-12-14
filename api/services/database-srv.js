@@ -1,4 +1,4 @@
-// config information
+"use strict";
 const { Connection, Request, TYPES } = require("tedious");
 const username = "recipe_admin";
 const password = "Runbangbros123";
