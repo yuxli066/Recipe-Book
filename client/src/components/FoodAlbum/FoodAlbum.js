@@ -37,15 +37,28 @@ function Copyright() {
   );
 }
 
-const theme = createTheme();
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      'Architects Daughter',
+      'cursive'
+    ].join(',')
+  }
+});
 
 export default function FoodAlbum() {
   // states
   const [recipes, setRecipes] = useState([]);
+  const [ currentOpen, setCurrentOpen ] = useState({
+    "imageUrl": "http://localhost.com",
+    "name": "PlaceHolder",
+    "description": "PlaceHolder",
+    "rating": 5
+  });
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = () => {
-    // get recipe info
+  const handleOpen = (currentRecipe) => {
+    setCurrentOpen(currentRecipe);
     setOpen(true);
   };
   const handleClose = () => {
@@ -122,7 +135,7 @@ export default function FoodAlbum() {
                       display: "inline-block",
                       flexDirection: "column",
                     }}
-                    onClick={handleOpen}
+                    onClick={() => handleOpen(card)}
                   >
                     <CardMedia
                       component="img"
@@ -166,7 +179,7 @@ export default function FoodAlbum() {
         />
         <Copyright />
       </Box>
-      <RecipeModal handleClose={handleClose} open={open} />
+      <RecipeModal handleClose={handleClose} open={open} recipe={currentOpen}/>
       {/* End footer */}
     </ThemeProvider>
   );

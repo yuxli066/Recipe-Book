@@ -30,7 +30,7 @@
 }
 
 .hide {
-  transition: opacity 1.5s, visibility 1.5s;
+  transition: opacity 1s, visibility 1s;
   opacity: 0;
   visibility: hidden;
 }
