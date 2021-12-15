@@ -2,20 +2,24 @@
   opacity: 1;
   position: absolute;
   width: 60%;
-  height: 80%;
+  height: 95%;
   margin-left: 20%;
   margin-right: 20%;
   top: 2%;
+  bottom: 1%;
   z-index: 1100;
   background: #f9fbff;
   border: none;
   border-radius: 2%;
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
     rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  overflow-y: scroll;
+  overflow-style: unset;
+  -ms-overflow-style: none;
 }
 
-.modal > h1{
-  font: 600 24px/32px "Copper Pot",serif;
+.modal::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
 }
 
 .close_button {

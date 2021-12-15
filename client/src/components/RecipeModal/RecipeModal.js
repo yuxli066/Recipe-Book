@@ -7,9 +7,39 @@ import Typography from "@mui/material/Typography";
 import styles from "./style.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import Container from "@mui/material/Container";
-import Divider from '@mui/material/Divider';
+
+// steppers
+import Stepper from '@mui/material/Stepper';
+import Step from '@mui/material/Step';
+import StepLabel from '@mui/material/StepLabel';
+import StepContent from '@mui/material/StepContent';
+
+// custom comps
+import TextDivider from "../Divider";
+
+const steps = [
+    {
+        label: 'Select campaign settings',
+        description: `For each ad campaign that you create, you can control how much
+              you're willing to spend on clicks and conversions, which networks
+              and geographical locations you want your ads to show on, and more.`,
+    },
+    {
+        label: 'Create an ad group',
+        description:
+            'An ad group contains one or more ads which target a shared set of keywords.',
+    },
+    {
+        label: 'Create an ad',
+        description: `Try out different ad text to see what brings in the most customers,
+              and learn how to enhance your ads using features like ad extensions.
+              If you run into any problems with your ads, find out how to tell if
+              they're running and how to resolve approval issues.`,
+    },
+];
 
 export default function RecipeModal({ open, handleClose, recipe }) {
+
   return (
     <div>
       <Modal
@@ -44,43 +74,41 @@ export default function RecipeModal({ open, handleClose, recipe }) {
               <Typography id={`transition-modal-${recipe.name.replace(' ','-')}`} variant="h2" component="h1" align={"left"}>
                 { recipe.name }
               </Typography>
-              <Divider
-                  sx={{
-                    '&.MuiDivider-root': {
-                      '&::before': {
-                        borderTop: `thin solid crimson`
-                      },
-                      '&::after': {
-                        borderTop: `thin solid crimson`
-                      }
-                    }
-                  }}
-                  textAlign="left"
-                  variant="middle"
-              >
-                    <Typography variant="h6">About</Typography>
-              </Divider>
-              <Typography id={`transition-modal-${recipe.name.replace(' ','-')}-description`} align={"left"} variant="h6">
-                { recipe.description }
-              </Typography>
+              <TextDivider text={"About"}/>
+              <Container style={{width: "90%"}}>
+                <Typography id={`transition-modal-${recipe.name.replace(' ','-')}-description`} align={"left"} variant="h6">
+                    { recipe.description }
+                </Typography>
+              </Container>
               <br />
-              <Divider
-                  sx={{
-                    '&.MuiDivider-root': {
-                      '&::before': {
-                        borderTop: `thin solid crimson`
-                      },
-                      '&::after': {
-                        borderTop: `thin solid crimson`
-                      }
-                    }
-                  }}
-                  textAlign="left"
-                  variant="middle"
-              >
-                  <Typography variant="h6">Directions</Typography>
-              </Divider>
-            </Container>
+              <TextDivider text={"Ingredients"}/>
+              <br />
+              <TextDivider text={"Directions"}/>
+                  <Container style={{width: "90%"}}>
+                    <Stepper orientation="vertical" sx={{
+                        '.MuiStepIcon-root': {
+                            'circle': {
+                                color: "crimson !important"
+                            }
+                        }
+                    }}>
+                        {steps.map((step, index) => (
+                            <Step key={step.label} active={true}>
+                                <StepLabel
+                                    optional={
+                                        index === 2 ? (
+                                            <Typography variant="caption">Last step</Typography>
+                                        ) : null
+                                    }
+                                />
+                                <StepContent>
+                                    <Typography>{step.description}</Typography>
+                                </StepContent>
+                            </Step>
+                        ))}
+                    </Stepper>
+                </Container>
+              </Container>
           </Box>
         </Zoom>
       </Modal>
