@@ -11,7 +11,6 @@ class RootCtrl {
     });
   }
 
-  // TODO: access database here for all recipes
   static async getRecipes(req, res) {
     const db = new databaseService();
     const allRecipes = await db.getAllRecipes((err, rowCount) => {
@@ -30,6 +29,19 @@ class RootCtrl {
     });
 
     return res.json(formattedRecipes);
+  }
+
+  static async getRecipesByName(req, res) {
+    const db = new databaseService();
+    const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${req.param['recipeName']}';`
+    const recipe = await db.queryDatabase(query, (err, rowCount) => {
+      if (err)
+        console.error(err);
+
+      console.log("Row Count:", rowCount);
+    });
+
+    return res.json(recipe);
   }
 
   // TODO: save new recipe to database

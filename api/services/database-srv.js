@@ -32,6 +32,25 @@ class AzureSql {
     });
   }
 
+  queryPromiseWrapper = (request) => {
+    let results = [];
+    return new Promise((resolve, reject) => {
+      this.connection
+          .then((dbConnection) => {
+            request.on("row", (column) => {
+              let values = column.map((v) => v.value);
+              results.push(values);
+            });
+            request.on("requestCompleted", () => {
+              resolve(results);
+              dbConnection.close();
+            });
+            dbConnection.execSql(request);
+          })
+          .catch((err) => reject(err));
+    });
+  }
+
   insertNewRecipe(recipe, callback) {
     const query = `INSERT into Recipe 
                        (imagePath, recipeName, recipeDescription, recipeIngredients, recipeRating, recipeInstructions, recipeNotes) 
@@ -74,7 +93,7 @@ class AzureSql {
         console.error(err.message, "Insert Failed");
         return callback(err);
       } else {
-        console.log(`${rowCount} row(s) returned`);
+        console.log(`${rowCount} Row(s) Returned`);
         callback(null, rowCount);
       }
     });
@@ -94,6 +113,19 @@ class AzureSql {
         })
         .catch((err) => reject(err));
     });
+  }
+
+  queryDatabase(query, callback) {
+    const request = new Request(query, (err, rowCount) => {
+      if (err) {
+        console.error(err.message, "Get Query Failed");
+        return callback(err);
+      } else {
+        console.log(`${rowCount} Row(s) Returned`);
+        callback(null, rowCount);
+      }
+    });
+    return this.queryPromiseWrapper(request);
   }
 
   closeConnection() {
