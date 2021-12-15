@@ -6,7 +6,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import CssBaseline from "@mui/material/CssBaseline";
 import Grid from "@mui/material/Grid";
-import Stack from "@mui/material/Stack";
+// import Stack from "@mui/material/Stack";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -15,7 +15,7 @@ import Rating from "@mui/material/Rating";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // custom comps
-import SearchInput from "../SearchInput";
+// import SearchInput from "../SearchInput";
 import RecipeModal from "../RecipeModal";
 
 // services
