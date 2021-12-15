@@ -75,9 +75,9 @@ export default function FoodAlbum() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container className={`${open ? styles.hide : styles.display}`}>
-        <SearchInput />
-      </Container>
+      {/*<Container className={`${open ? styles.hide : styles.display}`}>*/}
+      {/*  <SearchInput />*/}
+      {/*</Container>*/}
       <main>
         {/* Hero unit */}
         <Box
@@ -98,7 +98,7 @@ export default function FoodAlbum() {
               color="text.primary"
               gutterBottom
             >
-              Recipes:
+              Recipe Book
             </Typography>
             <Typography
               variant="h5"
@@ -106,20 +106,20 @@ export default function FoodAlbum() {
               color="text.secondary"
               paragraph
             >
-              A collection of Chinese takeout recipes you can make from the
+              A collection of Chinese cuisine recipes you can make from the
               comfort of your home.
             </Typography>
-            <Stack
-              sx={{ pt: 4 }}
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button variant="contained">Add New Recipe</Button>
-            </Stack>
+            {/*<Stack*/}
+            {/*  sx={{ pt: 4 }}*/}
+            {/*  direction="row"*/}
+            {/*  spacing={2}*/}
+            {/*  justifyContent="center"*/}
+            {/*>*/}
+            {/*  <Button variant="contained">Add New Recipe</Button>*/}
+            {/*</Stack>*/}
           </Container>
         </Box>
-        <Container sx={{ py: 8, zIndex: 800 }} maxWidth="md">
+        <Container sx={{ py: 3, zIndex: 800 }} maxWidth="md">
           {/* End hero unit */}
           <Grid
             container
