@@ -16,16 +16,20 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 // custom comps
 import SearchInput from "../SearchInput";
+import RecipeModal from "../RecipeModal";
 
 // services
 import { getRecipes } from "../../services/recipeService";
+
+// styles
+import styles from "./style.module.css";
 
 function Copyright() {
   return (
     <Typography variant="body2" color="text.secondary" align="center">
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
-        www.leoli.com
+        Leo Li
       </Link>{" "}
       {new Date().getFullYear()}
       {"."}
@@ -36,7 +40,18 @@ function Copyright() {
 const theme = createTheme();
 
 export default function FoodAlbum() {
+  // states
   const [recipes, setRecipes] = useState([]);
+  const [open, setOpen] = React.useState(false);
+
+  const handleOpen = () => {
+    // get recipe info
+    setOpen(true);
+  };
+  const handleClose = () => {
+    // clear recipe info
+    setOpen(false);
+  };
 
   useEffect(() => {
     getRecipes.then((recipes) => {
@@ -47,7 +62,7 @@ export default function FoodAlbum() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      <Container>
+      <Container className={`${open ? styles.hide : styles.display}`}>
         <SearchInput />
       </Container>
       <main>
@@ -59,7 +74,10 @@ export default function FoodAlbum() {
             pb: 6,
           }}
         >
-          <Container maxWidth="sm">
+          <Container
+            maxWidth="sm"
+            className={`${open ? styles.hide : styles.display}`}
+          >
             <Typography
               component="h1"
               variant="h2"
@@ -88,18 +106,23 @@ export default function FoodAlbum() {
             </Stack>
           </Container>
         </Box>
-        <Container sx={{ py: 8 }} maxWidth="md">
+        <Container sx={{ py: 8, zIndex: 800 }} maxWidth="md">
           {/* End hero unit */}
-          <Grid container spacing={4}>
+          <Grid
+            container
+            spacing={4}
+            className={`${open ? styles.hide : styles.display}`}
+          >
             {recipes &&
               recipes.map((card, index) => (
                 <Grid item key={index} xs={12} sm={6} md={4}>
                   <Card
                     sx={{
                       height: "150px",
-                      display: "flex",
+                      display: "inline-block",
                       flexDirection: "column",
                     }}
+                    onClick={handleOpen}
                   >
                     <CardMedia
                       component="img"
@@ -109,6 +132,7 @@ export default function FoodAlbum() {
                         }
                       }
                       image={card.imageUrl}
+                      className={styles.thumbnail}
                       alt="random"
                     />
                     <CardContent sx={{ flexGrow: 1 }}>
@@ -125,21 +149,24 @@ export default function FoodAlbum() {
                 </Grid>
               ))}
           </Grid>
+          <Box
+            className={`${styles.modal_overlay} ${
+              open ? styles.display : styles.hide
+            }`}
+          />
         </Container>
       </main>
       {/* Footer */}
       <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
-        <Typography variant="h6" align="center" gutterBottom>
-          Click here for more!
-        </Typography>
         <Typography
           variant="subtitle1"
           align="center"
           color="text.secondary"
           component="p"
-        ></Typography>
+        />
         <Copyright />
       </Box>
+      <RecipeModal handleClose={handleClose} open={open} />
       {/* End footer */}
     </ThemeProvider>
   );

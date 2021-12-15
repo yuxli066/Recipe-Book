@@ -1,0 +1,36 @@
+.thumbnail {
+  transition: transform 0.5s; /* Animation */
+  height: 200px;
+  margin: 0 auto;
+}
+
+.thumbnail:hover {
+  cursor: pointer;
+  transform: scale(
+    1.5
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+.modal_overlay {
+  background: rgba(0, 0, 0, 0.5);
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  position: fixed;
+  right: 0;
+  top: 0;
+  z-index: 900;
+  transition: opacity 200ms linear;
+}
+
+.display {
+  transition: opacity 1s, visibility 1s;
+  opacity: 1;
+  visibility: visible;
+}
+
+.hide {
+  transition: opacity 1.5s, visibility 1.5s;
+  opacity: 0;
+  visibility: hidden;
+}

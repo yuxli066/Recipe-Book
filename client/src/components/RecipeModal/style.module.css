@@ -1,0 +1,38 @@
+.modal {
+  opacity: 1;
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  margin-left: 20%;
+  margin-right: 20%;
+  top: 2%;
+  z-index: 1100;
+  background: #f9fbff;
+  border: none;
+  border-radius: 2%;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+.close_button {
+  border: 1px solid crimson;
+  border-radius: 50%;
+  cursor: pointer;
+  outline: none;
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  transition: transform 800ms;
+}
+
+.close_button:before {
+  transform: rotate(45deg);
+}
+
+.close_button:hover {
+  cursor: pointer;
+  transform: rotate(360deg) scale(1.2);
+  transition: transform 800ms;
+}
