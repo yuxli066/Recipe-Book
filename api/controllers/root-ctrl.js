@@ -14,7 +14,8 @@ class RootCtrl {
   static async getRecipes(req, res) {
     const db = new databaseService();
     const allRecipes = await db.getAllRecipes((err, rowCount) => {
-      if (err) console.error(err);
+      if (err)
+        console.error(err);
 
       console.log("Row Count:", rowCount);
     });
@@ -33,10 +34,8 @@ class RootCtrl {
 
   static async getRecipesByName(req, res) {
     const db = new databaseService();
-    const name = decodeURIComponent(req.params['recipeName']);
-    console.log(req.params['recipeName'], name);
-    const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${name}';`
-    console.log("query:", query);
+    const rName = decodeURIComponent(req.params['recipeName']);
+    const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${rName}';`
     const recipe = await db.queryDatabase(query, (err, rowCount) => {
       if (err)
         console.error(err);
@@ -44,10 +43,17 @@ class RootCtrl {
       console.log("Row Count:", rowCount);
     });
 
-    console.log("recipe:", recipe);
+    const formattedRecipe = recipe.map(r => ({
+      imageUrl: r[0],
+      name: r[1],
+      description: r[2],
+      ingredients: r[3],
+      rating: r[4],
+      directions: r[5],
+      notes: r[6]
+    }));
 
-    // TODO: format result before returning to user
-    return res.json(recipe);
+    return res.json(formattedRecipe);
   }
 
   // TODO: save new recipe to database
