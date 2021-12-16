@@ -52,9 +52,14 @@ export default function RecipeModal({ open, handleClose, recipe, recipeDetails }
               <Box className={styles.image_container}>
                 <img className={styles.recipe_image} src={recipe.imageUrl} alt={`${recipe.name.replace(' ','-')}`}/>
               </Box>
-              <Typography id={`transition-modal-${recipe.name.replace(' ','-')}`} variant="h2" component="h1" align={"left"}>
-                { recipe.name }
-              </Typography>
+              <Container style={{
+                width: "98%"
+              }}>
+                <Typography id={`transition-modal-${recipe.name.replace(' ','-')}`} variant="h2" component="h1" align={"left"}>
+                  { recipe.name }
+                </Typography>
+                <Typography variant="subtitle1" component="h1"><i>"{ recipeDetails.notes }"</i></Typography>
+              </Container>
               <TextDivider text={"About"}/>
               <Container style={{width: "90%"}}>
                 <Typography id={`transition-modal-${recipe.name.replace(' ','-')}-description`} align={"left"} variant="h6">

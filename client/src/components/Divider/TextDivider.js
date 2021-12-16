@@ -13,7 +13,8 @@ export default function TextDivider ({ text }) {
                     '&::after': {
                         borderTop: `thin solid crimson`
                     }
-                }
+                },
+                paddingTop: "1em"
             }}
             textAlign="left"
             variant="middle"
