@@ -33,8 +33,8 @@ class RootCtrl {
 
   static async getRecipesByName(req, res) {
     const db = new databaseService();
-    const name = decodeURIComponent(req.param['recipeName']);
-    console.log(req.param['recipeName'], name);
+    const name = decodeURIComponent(req.params['recipeName']);
+    console.log(req.params['recipeName'], name);
     const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${name}';`
     console.log("query:", query);
     const recipe = await db.queryDatabase(query, (err, rowCount) => {
