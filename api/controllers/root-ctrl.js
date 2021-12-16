@@ -33,7 +33,9 @@ class RootCtrl {
 
   static async getRecipesByName(req, res) {
     const db = new databaseService();
-    const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${decodeURIComponent(req.param['recipeName'])}';`
+    const name = decodeURIComponent(req.param['recipeName']);
+    console.log(req.param['recipeName'], name);
+    const query = `SELECT * FROM Recipe WHERE CONVERT(VARCHAR, recipeName)='${name}';`
     console.log("query:", query);
     const recipe = await db.queryDatabase(query, (err, rowCount) => {
       if (err)
@@ -43,7 +45,7 @@ class RootCtrl {
     });
 
     console.log("recipe:", recipe);
-    
+
     // TODO: format result before returning to user
     return res.json(recipe);
   }
