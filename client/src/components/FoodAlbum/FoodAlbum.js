@@ -19,7 +19,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import RecipeModal from "../RecipeModal";
 
 // services
-import { getRecipes } from "../../services/recipeService";
+import { getRecipes, getRecipe } from "../../services/recipeService";
 
 // styles
 import styles from "./style.module.css";
@@ -47,20 +47,37 @@ const theme = createTheme({
 });
 
 export default function FoodAlbum() {
+
   // states
   const [recipes, setRecipes] = useState([]);
+
   const [ currentOpen, setCurrentOpen ] = useState({
     "imageUrl": "http://localhost.com",
     "name": "PlaceHolder",
     "description": "PlaceHolder",
     "rating": 5
   });
+
+  const [recipeInfo, setRecipeInfo] = useState({
+    "imageUrl": "http://localhost.com",
+    "name": "PlaceHolder",
+    "description": "PlaceHolder",
+    "ingredients": "PlaceHolder",
+    "rating": 5,
+    "directions": "Placeholder",
+    "notes": "Placeholder"
+  });
+
   const [open, setOpen] = React.useState(false);
 
-  const handleOpen = (currentRecipe) => {
+  const handleOpen = async (currentRecipe) => {
+    const details = await getRecipe(currentRecipe.name);
+    setRecipeInfo(details[0]);
+    console.log(recipeInfo);
     setCurrentOpen(currentRecipe);
     setOpen(true);
   };
+
   const handleClose = () => {
     // clear recipe info
     setOpen(false);
@@ -179,7 +196,7 @@ export default function FoodAlbum() {
         />
         <Copyright />
       </Box>
-      <RecipeModal handleClose={handleClose} open={open} recipe={currentOpen}/>
+      <RecipeModal handleClose={handleClose} open={open} recipe={currentOpen} recipeDetails={recipeInfo} />
       {/* End footer */}
     </ThemeProvider>
   );
