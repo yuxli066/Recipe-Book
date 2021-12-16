@@ -73,7 +73,6 @@ export default function FoodAlbum() {
   const handleOpen = async (currentRecipe) => {
     const details = await getRecipe(currentRecipe.name);
     setRecipeInfo(details[0]);
-    console.log(recipeInfo);
     setCurrentOpen(currentRecipe);
     setOpen(true);
   };

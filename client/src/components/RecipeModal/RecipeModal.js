@@ -11,9 +11,16 @@ import Container from "@mui/material/Container";
 // custom comps
 import TextDivider from "../Divider";
 import RecipeInstructions from "../RecipeInstructions";
+import RecipeIngredients from "../RecipeIngredients";
 
 export default function RecipeModal({ open, handleClose, recipe, recipeDetails }) {
   const steps = recipeDetails.directions.split("|");
+  let ingredients = recipeDetails.ingredients.split("|");
+  let start = -5;
+  ingredients = ingredients.map(i => {
+    start += 5;
+    return ingredients.slice(start, start+5);
+  });
   return (
     <div>
       <Modal
@@ -56,6 +63,9 @@ export default function RecipeModal({ open, handleClose, recipe, recipeDetails }
               </Container>
               <br />
               <TextDivider text={"Ingredients"}/>
+              <Container style={{width: "90%"}}>
+                <RecipeIngredients ingredients={ingredients} />
+              </Container>
               <br />
               <TextDivider text={"Directions"}/>
                 <Container style={{width: "90%"}}>

@@ -16,10 +16,10 @@ export default function RecipeInstructions ({steps}) {
             }
         }}>
             {steps.map((step, index) => (
-                <Step key={step.label} active={true}>
+                <Step key={`recipe-instruction-${index}`} active={true}>
                     <StepLabel
                         optional={
-                            index === 2 ? (
+                            index === steps.length - 1 ? (
                                 <Typography variant="caption">Last step</Typography>
                             ) : null
                         }
