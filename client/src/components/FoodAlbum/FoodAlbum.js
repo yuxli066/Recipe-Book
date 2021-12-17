@@ -99,8 +99,8 @@ export default function FoodAlbum() {
         <Box
           sx={{
             bgColor: "background.paper",
-            pt: 8,
-            pb: 6,
+            pt: 4,
+            pb: 3,
           }}
         >
           <Container
@@ -114,7 +114,7 @@ export default function FoodAlbum() {
               color="text.primary"
               gutterBottom
             >
-              Recipe Book
+              The Recipe Book
             </Typography>
             <Typography
               variant="h5"
@@ -122,7 +122,7 @@ export default function FoodAlbum() {
               color="text.secondary"
               paragraph
             >
-              A collection of Chinese cuisine recipes you can make from the
+              A collection of quick and easy Chinese dishes you can make from the
               comfort of your home.
             </Typography>
             {/*<Stack*/}
@@ -135,7 +135,7 @@ export default function FoodAlbum() {
             {/*</Stack>*/}
           </Container>
         </Box>
-        <Container sx={{ py: 3, zIndex: 800 }} maxWidth="md">
+        <Container sx={{ py: 2, zIndex: 800 }} maxWidth="md">
           {/* End hero unit */}
           <Grid
             container
@@ -186,7 +186,7 @@ export default function FoodAlbum() {
         </Container>
       </main>
       {/* Footer */}
-      <Box sx={{ bgcolor: "background.paper", p: 6 }} component="footer">
+      <Box sx={{ bgcolor: "background.paper", p: 6, pt: 1 }} component="footer">
         <Typography
           variant="subtitle1"
           align="center"
