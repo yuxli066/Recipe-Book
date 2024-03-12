@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "./node_modules/nodemon/bin/nodemon.js index"
+    "dev": "PORT= ./node_modules/nodemon/bin/nodemon.js index"
   },
   "dependencies": {
     "compose-middleware": "^5.0.1",

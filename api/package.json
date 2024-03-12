@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "./node_modules/nodemon/bin/nodemon.js index"
+    "dev": "PORT=3000 /opt/homebrew/bin/nodemon index"
   },
   "dependencies": {
     "compose-middleware": "^5.0.1",
@@ -23,6 +23,7 @@
     "multer": "^1.4.3",
     "nodemailer": "^6.7.0",
     "nodemon": "^2.0.15",
+    "pg": "^8.11.3",
     "socket.io": "^4.3.1",
     "swagger-jsdoc": "^6.1.0",
     "swagger-ui-express": "^4.1.3",

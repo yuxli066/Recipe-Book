@@ -1,5 +1,7 @@
 "use strict";
 const { Connection, Request, TYPES } = require("tedious");
+const { Client } = require("pg");
+
 const username = "recipe_admin";
 const password = "Runbangbros123";
 const server = "recipe-database-server.database.windows.net";
@@ -36,20 +38,20 @@ class AzureSql {
     let results = [];
     return new Promise((resolve, reject) => {
       this.connection
-          .then((dbConnection) => {
-            request.on("row", (column) => {
-              let values = column.map((v) => v.value);
-              results.push(values);
-            });
-            request.on("requestCompleted", () => {
-              resolve(results);
-              dbConnection.close();
-            });
-            dbConnection.execSql(request);
-          })
-          .catch((err) => reject(err));
+        .then((dbConnection) => {
+          request.on("row", (column) => {
+            let values = column.map((v) => v.value);
+            results.push(values);
+          });
+          request.on("requestCompleted", () => {
+            resolve(results);
+            dbConnection.close();
+          });
+          dbConnection.execSql(request);
+        })
+        .catch((err) => reject(err));
     });
-  }
+  };
 
   insertNewRecipe(recipe, callback) {
     const query = `INSERT into Recipe 
