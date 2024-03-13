@@ -1,6 +1,6 @@
 [
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/egg-tarts.jfif",
+    "image": "./recipe_images/eggtarts.jpg",
     "recipeName": "Egg Tarts",
     "description": "Very easy to make Chinese style Egg Tart, you can put the leftovers in the refrigerator for later use for up to 3 days.",
     "ingredients": "1 cup confectioners' sugar|3 cups all-purpose flour|1 cup butter|1 egg, beaten|1 dash vanilla extract|2/3 cup white sugar|1 1/2 cups water|9 eggs, beaten|1 dash vanilla extract|1 cup evaporated milk",
@@ -9,7 +9,7 @@
     "notes": "Whole milk will work as a substitute for evaporated milk."
   },
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/eggplant-garlic.jfif",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/eggplant.jpg",
     "recipeName": "Eggplant with Garlic Sauce",
     "description": "A mildly spicy (or very spicy if you like) eggplant dish.",
     "ingredients": "3 tablespoons canola oil|4 Chinese eggplants, halved lengthwise and cut into 1 inch half moons|1 cup water|1 tablespoon crushed red pepper flakes|3 tablespoons garlic powder|5 teaspoons white sugar|1 teaspoon cornstarch|2 tablespoons light soy sauce|2 tablespoons oyster sauce",
@@ -18,7 +18,7 @@
     "notes": "Eggplants may reduce the risk of heart disease and promote healthy blood sugar control!"
   },
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/fortune-cookies.jfif",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/fortune_cookie.jpg",
     "recipeName": "Fortune Cookies",
     "description": "A crisp and sugary cookie usually made from flour, sugar, vanilla, and sesame seed oil with a piece of paper (fortune) inside.",
     "ingredients": "1 egg white|1/8 teaspoon vanilla extract|1 pinch salt|1/4 cup unbleached all-purpose flour|1/4 cup white sugar",
@@ -27,7 +27,7 @@
     "notes": "You can now write your own fortunes and place them in cookies!"
   },
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/sesame-balls.jpg",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/sesame_balls.jpg",
     "recipeName": "Sesame Balls",
     "description": "A crispy snack that is made with a sticky rice flour dough, filled with a sweet paste, rolled in sesame seeds, and fried until crispy on the outside, but still soft and chewy on the inside.",
     "ingredients": "2 1/2 slabs brown candy (_peen tong),_chopped|3 cups glutinous rice flour|1 cup Sweetened Red Bean Paste , store-bought or homemade|1/3 cup white sesame seeds|2 quarts vegetable oil",
@@ -36,7 +36,7 @@
     "notes": "The Sweetened Red Bean Paste for the filling can be purchased in a can or homemade. Sesame Balls must be eaten the day they are made. The following day, they can be heated in a 300-degree oven but they are not nearly as good as when they are fresh."
   },
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/steamed-buns.jpg",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/steamed_buns.jpg",
     "recipeName": "Steamed Buns",
     "description": "Also known as 'mantou' or bao buns (baozi), these tasty buns are smooth yet fluffy and usually eaten as they are or used to complement another dish.",
     "ingredients": "1 tablespoon active dry yeast|1 teaspoon white sugar|1/4 cup all-purpose flour|1/4 cup water|1/4 cup warm water|1 1/2 cups all-purpose flour|1/4 teaspoon salt|2 tablespoons white sugar|1 tablespoon vegetable oil|1/2 teaspoon baking powder",
@@ -45,7 +45,7 @@
     "notes": "You can make them either plain without meat fillings, or with meat fillings!"
   },
   {
-    "image": "https://storageaccountcooki9762.blob.core.windows.net/recipe-images/szechuan-green-beans.jfif",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/spicy_green_beans.jpg",
     "recipeName": "Spicy Szechuan Green Beans",
     "description": "A hot and spicy dish from the Szechuan province.",
     "ingredients": "1/2 pound green beans, trimmed and cut into 1-inch pieces|1/4 cup water|1 tablespoon minced ginger|2 cloves garlic, minced|1 teaspoon sesame oil|2 tablespoons soy sauce|1 tablespoon rice vinegar|1/2 teaspoon white sugar|1/4 teaspoon red pepper flakes",
