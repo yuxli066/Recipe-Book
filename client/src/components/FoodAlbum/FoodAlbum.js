@@ -13,6 +13,7 @@ import Container from "@mui/material/Container";
 import Link from "@mui/material/Link";
 import Rating from "@mui/material/Rating";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { Base64 } from "js-base64";
 
 // custom comps
 // import SearchInput from "../SearchInput";
@@ -39,40 +40,40 @@ function Copyright() {
 
 const theme = createTheme({
   typography: {
-    fontFamily: [
-      'Architects Daughter',
-      'cursive'
-    ].join(',')
-  }
+    fontFamily: ["Architects Daughter", "cursive"].join(","),
+  },
 });
 
 export default function FoodAlbum() {
-
   // states
   const [recipes, setRecipes] = useState([]);
 
-  const [ currentOpen, setCurrentOpen ] = useState({
-    "imageUrl": "http://localhost.com",
-    "name": "PlaceHolder",
-    "description": "PlaceHolder",
-    "rating": 5
+  const [currentOpen, setCurrentOpen] = useState({
+    imageUrl: "http://localhost.com",
+    name: "PlaceHolder",
+    description: "PlaceHolder",
+    rating: 5,
   });
 
   const [recipeInfo, setRecipeInfo] = useState({
-    "imageUrl": "http://localhost.com",
-    "name": "PlaceHolder",
-    "description": "PlaceHolder",
-    "ingredients": "PlaceHolder",
-    "rating": 5,
-    "directions": "Placeholder",
-    "notes": "Placeholder"
+    imageUrl: "http://localhost.com",
+    name: "PlaceHolder",
+    description: "PlaceHolder",
+    ingredients: "PlaceHolder",
+    rating: 5,
+    directions: "Placeholder",
+    notes: "Placeholder",
   });
 
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = async (currentRecipe) => {
     const details = await getRecipe(currentRecipe.name);
-    setRecipeInfo(details[0]);
+    const recipe_info = details[0];
+    recipe_info.imageUrl = Base64.fromUint8Array(
+      new Uint8Array(recipe_info.imageUrl)
+    );
+    setRecipeInfo(recipe_info);
     setCurrentOpen(currentRecipe);
     setOpen(true);
   };
@@ -84,6 +85,11 @@ export default function FoodAlbum() {
 
   useEffect(() => {
     getRecipes.then((recipes) => {
+      recipes.forEach((element) => {
+        element.imageUrl = Base64.fromUint8Array(
+          new Uint8Array(element.imageUrl.data)
+        );
+      });
       setRecipes(recipes);
     });
   }, []);
@@ -91,11 +97,7 @@ export default function FoodAlbum() {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
-      {/*<Container className={`${open ? styles.hide : styles.display}`}>*/}
-      {/*  <SearchInput />*/}
-      {/*</Container>*/}
       <main>
-        {/* Hero unit */}
         <Box
           sx={{
             bgColor: "background.paper",
@@ -122,8 +124,8 @@ export default function FoodAlbum() {
               color="text.secondary"
               paragraph
             >
-              A collection of quick and easy Chinese dishes you can make from the
-              comfort of your home.
+              A collection of quick and easy Chinese dishes you can make from
+              the comfort of your home.
             </Typography>
             {/*<Stack*/}
             {/*  sx={{ pt: 4 }}*/}
@@ -160,7 +162,7 @@ export default function FoodAlbum() {
                           // 16:9
                         }
                       }
-                      image={card.imageUrl}
+                      src={`data:image/png;base64,${card.imageUrl}`}
                       className={styles.thumbnail}
                       alt="random"
                     />
@@ -185,7 +187,6 @@ export default function FoodAlbum() {
           />
         </Container>
       </main>
-      {/* Footer */}
       <Box sx={{ bgcolor: "background.paper", p: 6, pt: 1 }} component="footer">
         <Typography
           variant="subtitle1"
@@ -195,8 +196,12 @@ export default function FoodAlbum() {
         />
         <Copyright />
       </Box>
-      <RecipeModal handleClose={handleClose} open={open} recipe={currentOpen} recipeDetails={recipeInfo} />
-      {/* End footer */}
+      <RecipeModal
+        handleClose={handleClose}
+        open={open}
+        recipe={currentOpen}
+        recipeDetails={recipeInfo}
+      />
     </ThemeProvider>
   );
 }

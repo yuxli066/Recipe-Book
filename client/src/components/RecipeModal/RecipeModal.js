@@ -13,13 +13,18 @@ import TextDivider from "../Divider";
 import RecipeInstructions from "../RecipeInstructions";
 import RecipeIngredients from "../RecipeIngredients";
 
-export default function RecipeModal({ open, handleClose, recipe, recipeDetails }) {
+export default function RecipeModal({
+  open,
+  handleClose,
+  recipe,
+  recipeDetails,
+}) {
   const steps = recipeDetails.directions.split("|");
   let ingredients = recipeDetails.ingredients.split("|");
   let start = -5;
-  ingredients = ingredients.map(i => {
+  ingredients = ingredients.map((i) => {
     start += 5;
-    return ingredients.slice(start, start+5);
+    return ingredients.slice(start, start + 5);
   });
   return (
     <div>
@@ -38,10 +43,7 @@ export default function RecipeModal({ open, handleClose, recipe, recipeDetails }
         disableEscapeKeyDown
         hideBackdrop
       >
-        <Zoom
-          in={open}
-          style={{ transitionDelay: "500ms" }}
-        >
+        <Zoom in={open} style={{ transitionDelay: "500ms" }}>
           <Box className={styles.modal}>
             <CloseIcon
               sx={{ fontSize: 70 }}
@@ -50,33 +52,53 @@ export default function RecipeModal({ open, handleClose, recipe, recipeDetails }
             />
             <Container maxWidth="md">
               <Box className={styles.image_container}>
-                <img className={styles.recipe_image} src={recipe.imageUrl} alt={`${recipe.name.replace(' ','-')}`}/>
+                <img
+                  className={styles.recipe_image}
+                  src={`data:image/png;base64,${recipe.imageUrl}`}
+                  alt={`${recipe.name.replace(" ", "-")}`}
+                />
               </Box>
-              <Container style={{
-                width: "98%"
-              }}>
-                <Typography id={`transition-modal-${recipe.name.replace(' ','-')}`} variant="h2" component="h1" align={"left"}>
-                  { recipe.name }
+              <Container
+                style={{
+                  width: "98%",
+                }}
+              >
+                <Typography
+                  id={`transition-modal-${recipe.name.replace(" ", "-")}`}
+                  variant="h2"
+                  component="h1"
+                  align={"left"}
+                >
+                  {recipe.name}
                 </Typography>
-                <Typography variant="subtitle1" component="h1"><i>"{ recipeDetails.notes }"</i></Typography>
+                <Typography variant="subtitle1" component="h1">
+                  <i>"{recipeDetails.notes}"</i>
+                </Typography>
               </Container>
-              <TextDivider text={"About"}/>
-              <Container style={{width: "90%"}}>
-                <Typography id={`transition-modal-${recipe.name.replace(' ','-')}-description`} align={"left"} variant="h6">
-                    { recipe.description }
+              <TextDivider text={"About"} />
+              <Container style={{ width: "90%" }}>
+                <Typography
+                  id={`transition-modal-${recipe.name.replace(
+                    " ",
+                    "-"
+                  )}-description`}
+                  align={"left"}
+                  variant="h6"
+                >
+                  {recipe.description}
                 </Typography>
               </Container>
               <br />
-              <TextDivider text={"Ingredients"}/>
-              <Container style={{width: "90%"}}>
+              <TextDivider text={"Ingredients"} />
+              <Container style={{ width: "90%" }}>
                 <RecipeIngredients ingredients={ingredients} />
               </Container>
               <br />
-              <TextDivider text={"Directions"}/>
-                <Container style={{width: "90%"}}>
-                    <RecipeInstructions steps={steps} />
-                </Container>
+              <TextDivider text={"Directions"} />
+              <Container style={{ width: "90%" }}>
+                <RecipeInstructions steps={steps} />
               </Container>
+            </Container>
           </Box>
         </Zoom>
       </Modal>
