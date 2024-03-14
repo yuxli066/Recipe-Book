@@ -23,7 +23,8 @@ import RecipeModal from "../RecipeModal";
 import { getRecipes, getRecipe } from "../../services/recipeService";
 
 // styles
-import styles from "./style.module.css";
+import styles from "./style.module.scss";
+import "./material_ui_custom.scss";
 
 function Copyright() {
   return (
@@ -157,11 +158,6 @@ export default function FoodAlbum() {
                   >
                     <CardMedia
                       component="img"
-                      sx={
-                        {
-                          // 16:9
-                        }
-                      }
                       src={`data:image/png;base64,${card.imageUrl}`}
                       className={styles.thumbnail}
                       alt="random"

@@ -51,13 +51,13 @@ export default function RecipeModal({
               onClick={handleClose}
             />
             <Container maxWidth="md">
-              <Box className={styles.image_container}>
+              {/* <Box className={styles.image_container}>
                 <img
                   className={styles.recipe_image}
                   src={`data:image/png;base64,${recipe.imageUrl}`}
                   alt={`${recipe.name.replace(" ", "-")}`}
                 />
-              </Box>
+              </Box> */}
               <Container
                 style={{
                   width: "98%",
