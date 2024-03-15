@@ -27,3 +27,5 @@ yarn-error.log*
 
 # build
 build
+
+user_data_scraper/

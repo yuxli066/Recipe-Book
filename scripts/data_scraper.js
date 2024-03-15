@@ -85,10 +85,16 @@ const scrape = async (page) => {
           (img) => img.src
         )
       ).trim();
+      console.log("image href", image_href);
       const image_buffer = await page.evaluate(async (image_href) => {
         return fetch(image_href, {
           method: "GET",
-        }).then((r) => r.arrayBuffer());
+          mode: "no-cors",
+        }).then((r) => {
+          console.log(r.body);
+          debugger;
+          return r.blob();
+        });
       }, image_href);
 
       console.log("IMAGE BUFFER", image_buffer);
@@ -121,7 +127,7 @@ const scrape = async (page) => {
   try {
     browser = await puppeteer.launch({
       headless: false,
-      devtools: false,
+      devtools: true,
       userDataDir: "./user_data_scraper",
       ignoreDefaultArgs: ["--enable-automation"],
       ignoreHTTPSErrors: true,
