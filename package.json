@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "cross-env": "^7.0.3",
+    "puppeteer": "^22.4.1",
     "tedious": "^14.0.0"
   }
 }
