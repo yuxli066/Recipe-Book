@@ -4,7 +4,6 @@ import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Zoom from "@mui/material/Zoom";
 import Typography from "@mui/material/Typography";
-import styles from "./style.module.css";
 import CloseIcon from "@mui/icons-material/Close";
 import Container from "@mui/material/Container";
 
@@ -12,6 +11,9 @@ import Container from "@mui/material/Container";
 import TextDivider from "../Divider";
 import RecipeInstructions from "../RecipeInstructions";
 import RecipeIngredients from "../RecipeIngredients";
+
+/** styles */
+import styles from "./style.module.css";
 
 export default function RecipeModal({
   open,
@@ -68,6 +70,7 @@ export default function RecipeModal({
                   variant="h2"
                   component="h1"
                   align={"left"}
+                  className={styles.header}
                 >
                   {recipe.name}
                 </Typography>
