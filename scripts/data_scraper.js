@@ -12,42 +12,6 @@ const waitOptions = {
   timeout: 60000,
 };
 
-// const scroll = async (page) => {
-//     await page.evaluateHandle(() => {
-//         const travel_distance = window.innerHeight;
-//         let max_distance = document.body.scrollHeight, current_distance = 0;
-//         console.log(travel_distance, max_distance);
-//         let count = 0, max_count = 150;
-//         return new Promise((resolve, reject) => {
-//             try {
-//                 const timer = setInterval(() => {
-//                     window.scrollBy({
-//                         top: travel_distance,
-//                         left: 0,
-//                         behavior: 'smooth'
-//                     });
-//                     current_distance += travel_distance;
-//                     max_distance += document.body.scrollHeight;
-//                     if (current_distance >= max_distance) {
-//                         clearInterval(timer);
-//                         resolve();
-//                     }
-
-//                     if (count >= max_count) {
-//                         clearInterval(timer);
-//                         resolve();
-//                     }
-
-//                     ++count;
-
-//                 }, 500);
-//             } catch (e) {
-//                 reject(e);
-//             }
-//         });
-//     });
-// }
-
 const scrape = async (page) => {
   const all_recipes = [];
   try {
