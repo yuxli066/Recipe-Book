@@ -2,8 +2,6 @@ const puppeteer = require("puppeteer");
 const fs = require("fs");
 const path = require("path");
 const { exit } = require("process");
-const { rejects } = require("assert");
-const { url } = require("inspector");
 
 const home_page =
   "https://www.allrecipes.com/recipes/695/world-cuisine/asian/chinese/";
