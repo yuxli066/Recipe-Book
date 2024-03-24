@@ -74,8 +74,8 @@ const scrape = async (page) => {
                 i +
                 "|" +
                 String(li.innerText).replace(
-                  /[\n|DOTDASH MEREDITH VIDEO STUDIOS]+/gm,
-                  " "
+                  /(?:\n|DOTDASH MEREDITH VIDEO STUDIOS)+/gm,
+                  ""
                 ),
               ""
             )
@@ -94,8 +94,8 @@ const scrape = async (page) => {
                 i +
                 "|" +
                 String(li.innerText).replace(
-                  /[\n|DOTDASH MEREDITH VIDEO STUDIOS]+/gm,
-                  " "
+                  /(?:\n|DOTDASH MEREDITH VIDEO STUDIOS)+/gm,
+                  ""
                 ),
               ""
             )

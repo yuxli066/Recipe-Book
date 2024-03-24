@@ -1,5 +1,5 @@
 const databaseService = require("../api/services/database-postgre");
-const recipes = require("./recipes.json");
+const recipes = require("./scraped_recipes.json");
 const fs = require("fs");
 const sharp = require("sharp");
 
