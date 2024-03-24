@@ -14,6 +14,8 @@ const waitOptions = {
 
 const scrape = async (page) => {
   const all_recipes = [];
+  // await page.setRequestInterception(true);
+
   try {
     const all_recipes_hrefs = await page.$$eval(
       '[id *= "mntl-taxonomysc-article-list-group"] a',
@@ -21,6 +23,15 @@ const scrape = async (page) => {
     );
     for (let h of all_recipes_hrefs) {
       await page.goto(h, waitOptions);
+
+      // page.on('request', (request) => {
+      //   // || String(request.url()).startsWith('blob:')
+      //    if (String(request.resourceType()).toLowerCase() === 'media') {
+      //     request.abort(); // abort all media types
+      //    } else {
+      //     request.continue();
+      //    }
+      // });
 
       console.log("page url:", h);
       let article_heading = null;
@@ -91,15 +102,19 @@ const scrape = async (page) => {
         );
       }
 
-      const image_exists = await page.$(
+      const large_image_exists = await page.$(
         '[class *= "primary-image__media"] img'
       );
+      const small_image_exists = await page.$(
+        'img[class *= "universal-image__image"]'
+      );
+      const image_exists = large_image_exists || small_image_exists;
       if (image_exists) {
+        const image_selector = large_image_exists
+          ? '[class *= "primary-image__media"] img'
+          : 'img[class *= "universal-image__image"]';
         const image_href = String(
-          await page.$eval(
-            '[class *= "primary-image__media"] img',
-            (img) => img.src
-          )
+          await page.$eval(image_selector, (img) => img.src)
         ).trim();
         const image_res = await page.goto(image_href, waitOptions);
         const imageBuffer = await image_res.buffer();
@@ -161,7 +176,10 @@ const scrape = async (page) => {
     });
     await page.goto(home_page, waitOptions);
     const all_recipes = await scrape(page);
-    fs.writeFileSync("./scraped_recipes.json", JSON.stringify(all_recipes));
+    fs.writeFileSync(
+      "./scraped_recipes_no_media.json",
+      JSON.stringify(all_recipes)
+    );
   } catch (e) {
     console.log(e);
     exit(1);
