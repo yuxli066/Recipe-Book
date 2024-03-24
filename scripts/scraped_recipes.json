@@ -144,7 +144,7 @@
     "notes": "A cabbage stir-fry recipe that's very simple to make. Using only soy sauce in this recipe brings out the natural sweetness in the cabbage."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/kung_pao_chicken.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/kung_pao_chicken.jpg",
     "recipeName": "Kung Pao Chicken",
     "description": "This tasty kung pao chicken is similar to what is served in Chinese restaurants. It's easy to make, and you can be as creative with the measurements as you want. You can't go wrong! The sauce reduces until nice and thick.",
     "ingredients": "|2 tablespoons cornstarch, dissolved in 2 tablespoons water|2 tablespoons white wine, divided|2 tablespoons soy sauce, divided|2 tablespoons sesame oil, divided|1 pound skinless, boneless chicken breast halves - cut into chunks|1 ounce hot chili paste|2 teaspoons brown sugar|1 teaspoon distilled white vinegar|1 (8 ounce) can water chestnuts|4 ounces chopped peanuts|4 green onions, chopped|1 tablespoon chopped garlic",
@@ -153,7 +153,7 @@
     "notes": "This tasty kung pao chicken is similar to what is served in Chinese restaurants. It's easy to make, and you can be as creative with the measurements as you want. You can't go wrong! The sauce reduces until nice and thick."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/honey_walnut_shrimp.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/honey_walnut_shrimp.jpg",
     "recipeName": "Honey Walnut Shrimp",
     "description": "Honey walnut shrimp is a delicious Hong Kong-style dish of crispy battered shrimp topped with a creamy sauce and sugar-coated walnuts.",
     "ingredients": "|1 cup water|⅔ cup white sugar|½ cup walnuts|4 large egg whites|⅔ cup mochiko (glutinous rice flour)|1 cup vegetable oil for frying|1 pound large shrimp, peeled and deveined|¼ cup mayonnaise|2 tablespoons honey|1 tablespoon canned sweetened condensed milk",
@@ -162,7 +162,7 @@
     "notes": "Honey walnut shrimp is a delicious Hong Kong-style dish of crispy battered shrimp topped with a creamy sauce and sugar-coated walnuts."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/sweet_and_sour_pork.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/sweet_and_sour_pork.jpg",
     "recipeName": "Sweet and Sour Pork",
     "description": "Sweet and sour pork the way my husband's grandmother made it. She was Chinese and the secret is apple cider vinegar. This recipe is the way Gramma made sweet and sour dishes her whole life. It is the best!",
     "ingredients": "|1 pound pork butt, cut into 1 inch cubes|1 teaspoon soy sauce|1 teaspoon salt|¼ teaspoon white sugar|1 egg white|2 green onions, chopped|1 quart vegetable oil for frying|½ cup cornstarch|1 tablespoon vegetable oil|3 stalks celery, cut into 1/2 inch pieces|1 medium green bell pepper, cut into 1 inch pieces|1 medium onion, cut into wedges|1 pinch white sugar, or to taste|salt to taste|1 ¼ cups water, divided|¾ cup white sugar|⅓ cup apple cider vinegar|¼ cup ketchup|½ teaspoon soy sauce|¼ teaspoon salt|1 (8 ounce) can pineapple chunks, undrained|2 tablespoons cornstarch",
@@ -171,7 +171,7 @@
     "notes": "Sweet and sour pork the way my husband's grandmother made it. She was Chinese and the secret is apple cider vinegar. This recipe is the way Gramma made sweet and sour dishes her whole life. It is the best!"
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/mongolian_beef_and_spring_onions.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/mongolian_beef_and_spring_onions.jpg",
     "recipeName": "Mongolian Beef and Spring Onions",
     "description": "This Mongolian beef recipe with green onions has a soy-based sauce for a Chinese-style beef dish. Best served over soft rice noodles or rice.",
     "ingredients": "|2 teaspoons vegetable oil|1 tablespoon finely chopped garlic|½ teaspoon grated fresh ginger root|⅔ cup dark brown sugar|½ cup soy sauce|½ cup water|1 pound beef flank steak, sliced 1/4 inch thick on the diagonal|¼ cup cornstarch|1 cup vegetable oil for frying|2 bunches green onions, cut in 2-inch lengths",
@@ -234,7 +234,7 @@
     "notes": "This egg foo young recipe includes a delicious sauce to put on top of the patties. This is a very special recipe acquired when I worked at a Chinese restaurant to pay for my red 1966 VW bug when in high school! The recipe card is tattered and spotted now, but the dish is the best egg foo young I have ever had. To serve, place egg patty over steamed rice and put the sauce on top."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_spareribs.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_spareribs.jpg",
     "recipeName": "Chinese Spareribs",
     "description": "These Chinese spareribs are tender, juicy, and tangy. I created this recipe after nothing caught my eye while searching for a good sparerib recipe. I cooked this in the broiler, but it should be fine on the grill or in the oven.",
     "ingredients": "|3 tablespoons hoisin sauce|1 tablespoon ketchup|1 tablespoon honey|1 tablespoon soy sauce|1 tablespoon sake (or Chinese rice wine)|1 teaspoon rice vinegar|1 teaspoon lemon juice|1 teaspoon grated fresh ginger|½ teaspoon grated fresh garlic|¼ teaspoon Chinese five-spice powder|1 pound pork spareribs",
@@ -261,7 +261,7 @@
     "notes": "This quick and easy Chinese corn soup is so good that I never bother ordering it from restaurants anymore!"
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/wonton_soup.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/wonton_soup.jpg",
     "recipeName": "Wonton Soup",
     "description": "Wonton soup is a simple, light, Chinese classic with pork-filled dumplings in seasoned chicken broth. Whether in soup or fried, wontons always add delicious, hearty flavor to any dish!",
     "ingredients": "|½ pound boneless pork loin, coarsely chopped|2 ounces peeled shrimp, finely chopped|1 tablespoon Chinese rice wine|1 tablespoon light soy sauce|1 teaspoon brown sugar|1 teaspoon finely chopped green onions|1 teaspoon chopped fresh ginger root|24 (3.5 inch square) wonton wrappers|3 cups chicken stock|2 tablespoons finely chopped green onions",
@@ -279,7 +279,7 @@
     "notes": "A delicious pepper steak recipe served with boiled white rice — easy and made from items I've already got in my cupboards. My mother clipped this recipe from somewhere and it became a specialty of mine; however, I've been unable to find the original source."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/authentic_chinese_egg_rolls_(from_a_chinese_person).jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/authentic_chinese_egg_rolls.jpg",
     "recipeName": "Authentic Chinese Egg Rolls (from a Chinese person)",
     "description": "These Chinese egg rolls come from my mom who is the best cook ever — and I am a picky eater. If I like this, then you will. This is very authentic because my family is Chinese and I am too. This recipe is at least 300 years old in the Ling family.",
     "ingredients": "|4 teaspoons vegetable oil, divided|3 large eggs, beaten|1 medium head cabbage, finely shredded|½ carrot, julienned|1 pound Chinese barbequed or roasted pork, cut into matchsticks|1 (8 ounce) can shredded bamboo shoots|1 cup dried, shredded wood ear mushroom, rehydrated|2 green onions, thinly sliced|2 ½ teaspoons soy sauce|1 teaspoon salt|1 teaspoon sugar|½ teaspoon monosodium glutamate ( G)|1 (14 ounce) package egg roll wrappers|1 egg white, beaten|4 cups oil for frying, or as needed",
@@ -297,7 +297,7 @@
     "notes": "This General Tao chicken tastes the same as the one served in Chinese restaurants, without the deep frying. Serve on steamed jasmine or basmati rice."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/restaurant_style_egg_drop_soup.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/restaurant_style_egg_drop_soup.jpg",
     "recipeName": "Restaurant Style Egg Drop Soup",
     "description": "This chicken egg drop soup is born from a love of the soup, many trips to my favorite Chinese restaurant, and many questions. This variation is the result. Simplicity is the key. The soup can be reheated or frozen and reheated.",
     "ingredients": "|4 cups chicken broth, divided|2 tablespoons chopped fresh chives|¼ teaspoon salt|⅛ teaspoon ground ginger|1 ½ tablespoons cornstarch|2 eggs|1 egg yolk",
@@ -342,7 +342,7 @@
     "notes": "This ginger beef recipe is so much better than takeout! Serve it with homemade fried rice or plain rice. If you like spicy, just add more chili pepper flakes."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/easy_chinese_fried_noodles.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/easy_chinese_fried_noodles.jpg",
     "recipeName": "Easy Chinese Fried Noodles",
     "description": "These fried noodles are a quick, easy, and delicious recipe that all will enjoy. Try adding cooked, cubed pork or chicken. Bean sprouts, water chestnuts, sliced almonds, or any of your favorite vegetables can also be added to this versatile recipe.",
     "ingredients": "|2 (3 ounce) packages soy sauce-flavored ramen noodles with seasoning packets|2 tablespoons vegetable oil, divided|3 large eggs, beaten|2 teaspoons vegetable oil, divided|4 green onions, thinly sliced|1 small carrot, peeled and grated|½ cup green peas|¼ cup red bell pepper, minced|2 tablespoons sesame oil|1 teaspoon sesame oil, or to taste|1 teaspoon soy sauce, or to taste",
@@ -360,7 +360,7 @@
     "notes": "This black bean sauce recipe with garlic, chiles, and ginger creates a popular Chinese stir-fry sauce that's pungent and earthy. It's easy to make and will last in the refrigerator for up to a month. Because of the saltiness of the beans, there is no need to add salt in the recipes where you use this sauce."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chicken_fried_rice.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chicken_fried_rice.jpg",
     "recipeName": "Chicken Fried Rice",
     "description": "This chicken fried rice recipe is very easy and tasty! It's basically cooked chicken, rice, soy sauce, and shredded egg stir-fried together. For best results, use leftover cooked rice.",
     "ingredients": "|1 large egg|1 tablespoon water|1 tablespoon butter|1 tablespoon vegetable oil|1 onion, chopped|2 cups cooked white rice, cold|1 cup cooked, chopped chicken meat|2 tablespoons soy sauce|1 teaspoon ground black pepper",
@@ -396,7 +396,7 @@
     "notes": "My father came up with this easy shrimp toast recipe while experimenting in the kitchen. It's an absolutely delicious way to use shrimp. I think I've gotten pretty good at making this dish, but it still doesn't compare to my father's! Don't be fooled by the ingredients — most are optional. Serve as an appetizer or main dish."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_chicken_fried_rice.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_chicken_fried_rice.jpg",
     "recipeName": "Chinese Chicken Fried Rice",
     "description": "This chicken fried rice recipe tastes just like what they serve in restaurants. A stir-fry with chicken, rice, soy sauce, and veggies like peas, carrots, celery, and bell peppers. My sister just sort of whipped this up one day, and it's very good!",
     "ingredients": "|½ tablespoon sesame oil|1 onion, diced|1 ½ pounds cooked, cubed chicken meat|2 tablespoons soy sauce|2 large carrots, diced|2 stalks celery, diced|1 large red bell pepper, diced|¾ cup fresh pea pods, halved|½ large green bell pepper, diced|6 cups cooked white rice|2 large eggs, scrambled|⅓ cup soy sauce",
@@ -405,7 +405,7 @@
     "notes": "This chicken fried rice recipe tastes just like what they serve in restaurants. A stir-fry with chicken, rice, soy sauce, and veggies like peas, carrots, celery, and bell peppers. My sister just sort of whipped this up one day, and it's very good!"
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/bang_bang_chicken.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/bang_bang_chicken.jpg",
     "recipeName": "Bang Bang Chicken",
     "description": "This bang bang chicken is a wonderful Americanized version of an extremely popular Sichuan Chinese dish. With twice-fried chicken, you get the crispy fried breading you'd expect, and the bang bang sauce drizzle makes the entire dish spectacular. You'll love this more than any restaurant version. Pay attention to the notes in the directions.",
     "ingredients": "|⅓ cup milk|1 large egg|1 pound boneless, skinless chicken breasts, cut into 1-inch cubes|¼ cup potato starch|¼ cup all-purpose flour|½ teaspoon salt|¼ teaspoon ground black pepper|¼ teaspoon shichimi togarashi (Japanese red pepper condiment)|2 cups oil for frying, or as needed|¼ cup mayonnaise|2 tablespoons honey|2 tablespoons sweet chili sauce|1 teaspoon gochujang (Korean hot pepper paste)",
@@ -441,7 +441,7 @@
     "notes": "Moo goo gai pan is a Chinese-American dish that literally translates to chicken with sliced mushrooms. This dish is great, light, and very flavorful."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/szechwan_shrimp.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/szechwan_shrimp.jpg",
     "recipeName": "Szechwan Shrimp",
     "description": "Szechuan shrimp is an impressive dish made with simple ingredients. I usually make it for company. For more or less heat, adjust the amount of red pepper. Serve over hot steamed rice.",
     "ingredients": "|4 tablespoons water|2 tablespoons ketchup|1 tablespoon soy sauce|2 teaspoons cornstarch|1 teaspoon honey|½ teaspoon crushed red pepper|¼ teaspoon ground ginger|1 tablespoon vegetable oil|¼ cup sliced green onions|4 cloves garlic, minced|12 ounces cooked shrimp, tails removed",
@@ -459,7 +459,7 @@
     "notes": "Chinese broccoli is my favorite veggie. This recipe combines this wonderful creation with Asian flavors for a delicious side."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/taiwanese_popcorn_chicken.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/taiwanese_popcorn_chicken.jpg",
     "recipeName": "Taiwanese Popcorn Chicken",
     "description": "These Taiwanese popcorn chicken bites are incredibly delicious. Five-spice, ginger, and soy sauce flavor bite-sized pieces of chicken before they're dipped in tempura mix and fried until golden and crispy.",
     "ingredients": "|1 ½ pounds boneless chicken thighs, cut into bite-size pieces|2 cloves garlic, finely chopped|1 tablespoon soy sauce|2 teaspoons grated ginger|1 teaspoon five-spice powder|1 teaspoon ground white pepper, or to taste|1 teaspoon salt, or to taste|½ teaspoon rice vinegar|½ teaspoon cayenne pepper|1 large egg|1 cup tempura batter mix, dry, or as needed|2 cups peanut oil for frying, or as needed|1 bunch hai basil, chopped|2 green onions, chopped",
@@ -486,7 +486,7 @@
     "notes": "This Szechuan beef is spicy! Serve with rice."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/super-simple,_super-spicy_mongolian_beef.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/super-simple,_super-spicy_mongolian_beef.jpg",
     "recipeName": "Super-Simple, Super-Spicy Mongolian Beef",
     "description": "This spicy Mongolian beef is a great-tasting recipe that is easy to prepare and takes minutes to cook! Serve with rice and a veggie side for a nice family dinner.",
     "ingredients": "|¼ cup soy sauce|1 tablespoon hoisin sauce|1 tablespoon sesame oil|2 teaspoons white sugar|1 tablespoon minced garlic|1 tablespoon red pepper flakes ( ptional)|1 pound beef flank steak, thinly sliced|1 tablespoon peanut oil|2 large green onions, thinly sliced",
@@ -522,7 +522,7 @@
     "notes": "This recipe uses Chinese eggplants which are skinnier, longer, and are a lighter purple color. They are also a bit denser and hold up better when cooked. This dish is mildly spicy (or you can make it very spicy, if you like). My mother has been making this for me since I was a child. It is so good!"
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_barbeque_pork_(char_siu).jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/chinese_barbeque_pork_(char_siu).jpg",
     "recipeName": "Chinese Barbeque Pork (Char Siu)",
     "description": "In addition to its impressive high-gloss appearance and savory taste, this Chinese barbeque pork is quite easy to make at home — even without a fancy ceramic grill.",
     "ingredients": "|⅔ cup soy sauce|½ cup honey|½ cup Chinese rice wine (or sake or dry sherry)|⅓ cup hoisin sauce|⅓ cup ketchup|⅓ cup brown sugar|4 cloves garlic, crushed|1 teaspoon Chinese five-spice powder|½ teaspoon freshly ground black pepper|¼ teaspoon cayenne pepper|⅛ teaspoon pink curing salt ( ptional)|1 (3 pound) boneless pork butt (shoulder)|1 teaspoon red food coloring, or as desired ( ptional)|1 teaspoon kosher salt, or to taste",
@@ -531,7 +531,7 @@
     "notes": "In addition to its impressive high-gloss appearance and savory taste, this Chinese barbeque pork is quite easy to make at home — even without a fancy ceramic grill."
   },
   {
-    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/sweet_and_sour_pork_tenderloin.jpg&w=160&q=60&c=sc&poi=auto&orient=true&h=90",
+    "image": "/Users/leoli/Desktop/leo-projects/Recipe-Book/scripts/recipe_images/sweet_and_sour_pork_tenderloin.jpg",
     "recipeName": "Sweet and Sour Pork Tenderloin",
     "description": "I thoroughly enjoyed this plate of florescent food, and if you're a fan of the Chinese take-out version, I believe you will enjoy this too.",
     "ingredients": "|1 (1 1/4 pound) pork tenderloin, trimmed of silver skin|salt and ground black pepper|⅓ cup ketchup|⅓ cup seasoned rice vinegar|1 (8 ounce) can pineapple chunks, drained with juice reserved|2 tablespoons brown sugar|4 cloves garlic, minced|2 teaspoons hot chili sauce (such as riracha®)|1 teaspoon soy sauce|1 pinch red pepper flakes|1 tablespoon vegetable oil|1 teaspoon butter|¼ cup chopped green onion (white part only)|2 tablespoons chopped green onion tops",
