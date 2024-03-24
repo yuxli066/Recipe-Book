@@ -8,13 +8,21 @@ const home_page =
 const chrome_path = "/usr/bin/google-chrome";
 
 const waitOptions = {
-  waitUntil: "networkidle2",
+  waitUntil: ["load", "domcontentloaded", "networkidle2"],
   timeout: 60000,
 };
 
+const nav_to_page = async (url, page) => {
+  try {
+    await page.goto(url, waitOptions);
+    return page.evaluate(() => document.title);
+  } catch (err) {
+    console.error(err.message);
+    return false;
+  }
+};
 const scrape = async (page) => {
   const all_recipes = [];
-  // await page.setRequestInterception(true);
 
   try {
     const all_recipes_hrefs = await page.$$eval(
@@ -22,16 +30,18 @@ const scrape = async (page) => {
       (cards) => cards.map((card) => card.href)
     );
     for (let h of all_recipes_hrefs) {
-      await page.goto(h, waitOptions);
+      let page_nav_successful = false,
+        tries = 0;
 
-      // page.on('request', (request) => {
-      //   // || String(request.url()).startsWith('blob:')
-      //    if (String(request.resourceType()).toLowerCase() === 'media') {
-      //     request.abort(); // abort all media types
-      //    } else {
-      //     request.continue();
-      //    }
-      // });
+      while (!page_nav_successful) {
+        const doc_title = await nav_to_page(h, page);
+        if (doc_title) {
+          break;
+        } else if (tries > 5) {
+          throw new Error("page nav failed.");
+        }
+        tries += 1;
+      }
 
       console.log("page url:", h);
       let article_heading = null;
@@ -124,9 +134,11 @@ const scrape = async (page) => {
         image_file_path = path.resolve(
           __dirname,
           "recipe_images",
-          `${String(article_heading).replace(/\s+/gm, "_").toLowerCase()}.${
+          `${String(article_heading)
+            .replace(/\s+/gm, "_")
+            .toLowerCase()}.${String(
             image_name.split(".")[image_name.split(".").length - 1]
-          }`
+          ).replace("&w=160&q=60&c=sc&poi=auto&orient=true&h=90", "")}`
         );
         fs.writeFileSync(image_file_path, imageBuffer, "base64");
       }
@@ -177,7 +189,7 @@ const scrape = async (page) => {
     await page.goto(home_page, waitOptions);
     const all_recipes = await scrape(page);
     fs.writeFileSync(
-      "./scraped_recipes_no_media.json",
+      "./scripts/scraped_recipes_no_media.json",
       JSON.stringify(all_recipes)
     );
   } catch (e) {

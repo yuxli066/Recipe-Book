@@ -10,6 +10,8 @@
   ],
   "description": "Recipe App - Cloud Computing Project 2",
   "scripts": {
+    "scrape": "node ./scripts/data_scraper.js",
+    "upload": "node ./scripts/sqlUpload.js",
     "build": "yarn workspace client build",
     "start": "concurrently cross-env PORT=5000 \\\"yarn workspace client start\\\" \\\"yarn workspace api start\\\"",
     "start-client": "cross-env PORT=80 yarn workspace server start",
