@@ -40,7 +40,6 @@ class PostGreSql {
         recipe["instructions"],
         recipe["notes"],
       ],
-      rowMode: "array",
     };
 
     const res = await this.client.query(query);

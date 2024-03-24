@@ -29,6 +29,7 @@ const sharp = require("sharp");
     const buffer_data = Buffer.from(image_buffer, "base64");
     recipe.image = buffer_data;
 
+    console.log("inserting", recipe.recipeName);
     await db.insertNewRecipe(recipe, (err, rowCount) => {
       if (err) console.error(err);
       else console.log("Row Count:", rowCount);

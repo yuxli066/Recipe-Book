@@ -28,9 +28,12 @@ class RootCtrl {
 
   static async getRecipesByName(req, res) {
     const db = new databaseService();
-    const rName = decodeURIComponent(req.params["recipeName"]);
+    const rName = decodeURIComponent(req.params["recipeName"]).replace(
+      /([':@$#*&^%])/gm,
+      "\\$1"
+    );
     const schema_table = `"public".recipe`;
-    const query = `SELECT * FROM ${schema_table} WHERE name='${rName}';`;
+    const query = `SELECT * FROM ${schema_table} WHERE name=(E'${rName}');`;
     const recipe = await db.queryDatabase(query);
     const formattedRecipe = recipe.rows.map((r) => ({
       imageUrl: r[0],
