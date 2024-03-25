@@ -10,5 +10,7 @@ services:
     build:
       context: .
       dockerfile: deploy/DockerfileApi
+    ports:
+      - "127.0.0.1:50150:50150"
     environment:
       - NODE_ENV=production

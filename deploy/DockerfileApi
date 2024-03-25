@@ -10,4 +10,5 @@ RUN yarn install --production
 
 COPY api ./api/
 
+EXPOSE 50150
 CMD ["yarn","start-server"]
