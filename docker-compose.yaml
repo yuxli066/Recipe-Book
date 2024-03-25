@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  api-backend:
+    deploy:
+      replicas: 3
+      endpoint_mode: dnsrr
+    image: yuxuanleoli/api-backend
+    restart: always
+    build:
+      context: .
+      dockerfile: deploy/DockerfileApi
+    ports:
+      - "50150:50150"
+    environment:
+      - NODE_ENV=production

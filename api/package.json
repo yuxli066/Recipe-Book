@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "PORT=3001 /opt/homebrew/bin/nodemon index"
+    "dev": "PORT=50150 /opt/homebrew/bin/nodemon index"
   },
   "dependencies": {
     "compose-middleware": "^5.0.1",

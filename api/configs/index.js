@@ -7,7 +7,7 @@ require("./logger-config");
 // const db = {
 //     url: `${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}`,
 // };
-const port = 3001;
+const port = 50150;
 const uploads = `${rootPath}/uploads`;
 
 module.exports = {
