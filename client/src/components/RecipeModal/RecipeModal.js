@@ -65,15 +65,17 @@ export default function RecipeModal({
                   width: "98%",
                 }}
               >
-                <Typography
-                  id={`transition-modal-${recipe.name.replace(" ", "-")}`}
-                  variant="h2"
-                  component="h1"
-                  align={"left"}
-                  className={styles.header}
-                >
-                  {recipe.name}
-                </Typography>
+                <Box className={styles.header_wrapper}>
+                  <Typography
+                    id={`transition-modal-${recipe.name.replace(" ", "-")}`}
+                    variant="h2"
+                    component="h1"
+                    align={"left"}
+                    className={styles.header}
+                  >
+                    {recipe.name}
+                  </Typography>
+                </Box>
                 <Typography variant="subtitle1" component="h1">
                   <i>"{recipeDetails.notes}"</i>
                 </Typography>
