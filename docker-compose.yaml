@@ -10,7 +10,5 @@ services:
     build:
       context: .
       dockerfile: deploy/DockerfileApi
-    ports:
-      - "50150:50150"
     environment:
       - NODE_ENV=production
