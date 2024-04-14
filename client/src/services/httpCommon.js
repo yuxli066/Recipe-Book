@@ -6,7 +6,7 @@ const server_ip = "api.asianmomrecipes.com";
 const base =
   process.env.REACT_APP_ENVIRONMENT === "development"
     ? "http://localhost:50150/v1/"
-    : `https://${server_ip}/v1/`;
+    : `${server_ip}/v1/`;
 
 const http_instance = axios.create({
   baseURL: base,
