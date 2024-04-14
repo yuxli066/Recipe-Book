@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const server_ip = "api.delrosamassage.co";
+const server_ip = "api.asianmomrecipes.co";
 
 // constant variables
 const base =
