@@ -50,14 +50,14 @@ export default function FoodAlbum() {
   const [recipes, setRecipes] = useState([]);
 
   const [currentOpen, setCurrentOpen] = useState({
-    imageUrl: "http://localhost.com",
+    imageUrl: "//localhost.com",
     name: "PlaceHolder",
     description: "PlaceHolder",
     rating: 5,
   });
 
   const [recipeInfo, setRecipeInfo] = useState({
-    imageUrl: "http://localhost.com",
+    imageUrl: "//localhost.com",
     name: "PlaceHolder",
     description: "PlaceHolder",
     ingredients: "PlaceHolder",
