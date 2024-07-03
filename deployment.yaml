@@ -1,18 +1,28 @@
-apiVersion: v1
 kind: Service
+apiVersion: v1
 metadata:
   name: recipe-service
   labels:
     app: recipe-service
 spec:
-  type: LoadBalancer
-  ports:
-    - port: 50150 # port number that is exposed within the cluster
-      name: recipe-api
-      targetPort: 50150 # ports that containers are listening on
+  # Expose the service on a static port on each node
+  # so that we can access the service from outside the cluster
+  type: NodePort
+
+  # When the node receives a request on the static port (30163)
+  # "select pods with the label 'app' set to 'echo-hostname'"
+  # and forward the request to one of them
   selector:
-    app: recipeapp # forward requests to pod's with label of this value
-type: NodePort
+    app: recipeapp
+
+  ports:
+    # Three types of ports for a service
+    # nodePort - a static port assigned on each the node
+    # port - port exposed internally in the cluster
+    # targetPort - the container port to send requests to
+    - nodePort: 50150
+      port: 8080
+      targetPort: 50150
 ---
 apiVersion: apps/v1
 kind: Deployment
