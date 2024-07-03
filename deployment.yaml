@@ -37,3 +37,23 @@ spec:
           image: yuxuanleoli/recipe-backend:1.0
           ports:
             - containerPort: 50150
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: site-nginx-ingress
+  annotations:
+    #app.kubernetes.io/ingress.class: "nginx"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - host: api.asianmomrecipes.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: recipe-service
+                port:
+                  number: 80
