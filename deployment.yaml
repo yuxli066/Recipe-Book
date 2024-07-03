@@ -34,6 +34,6 @@ spec:
     spec:
       containers:
         - name: api-container
-          image: yuxuanleoli/api-backend
+          image: yuxuanleoli/recipe-backend:1.0
           ports:
             - containerPort: 50150
