@@ -7,11 +7,12 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-    - port: 80 # port number that is exposed within the cluster
+    - port: 50150 # port number that is exposed within the cluster
       name: recipe-api
       targetPort: 50150 # ports that containers are listening on
   selector:
     app: recipeapp # forward requests to pod's with label of this value
+type: NodePort
 ---
 apiVersion: apps/v1
 kind: Deployment
