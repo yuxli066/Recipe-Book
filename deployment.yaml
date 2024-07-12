@@ -7,7 +7,7 @@ metadata:
 spec:
   # Expose the service on a static port on each node
   # so that we can access the service from outside the cluster
-  type: NodePort
+  type: ClusterIP
 
   # When the node receives a request on the static port (30163)
   # "select pods with the label 'app' set to 'echo-hostname'"
@@ -20,8 +20,8 @@ spec:
     # nodePort - a static port assigned on each the node
     # port - port exposed internally in the cluster
     # targetPort - the container port to send requests to
-    - nodePort: 32767
-      port: 50150
+    # - nodePort: 32767
+    - port: 50150
       targetPort: 50150
 ---
 apiVersion: apps/v1
