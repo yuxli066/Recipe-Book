@@ -29,7 +29,7 @@ kind: Deployment
 metadata:
   name: recipe-deployment
 spec:
-  replicas: 3
+  replicas: 5
   strategy:
     type: RollingUpdate
     rollingUpdate:
