@@ -46,5 +46,6 @@ spec:
       containers:
         - name: api-container
           image: yuxuanleoli/recipe-backend:1.0
+          imagePullPolicy: Always
           ports:
             - containerPort: 50150
