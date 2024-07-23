@@ -12,6 +12,8 @@ const { port } = configs;
 
 // whitelisted cors urls
 const whitelist = [
+  "https://asianmomrecipes.com",
+  "asianmomrecipes.com",
   "http://localhost:3000",
   "localhost:3000",
   "recipecookingapp.azurewebsites.net",
