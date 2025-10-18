@@ -5,7 +5,7 @@ const { Client } = require("pg");
 const config = {
   user: "default",
   database: "recipes",
-  password: "DI1Pjg0lvsEp",
+  password: process.env.postgre,
   port: 5432,
   host: "ep-polished-star-a4jpnvr2-pooler.us-east-1.aws.neon.tech",
   keepAlive: true,
@@ -29,8 +29,7 @@ class PostGreSql {
 
   async insertNewRecipe(recipe) {
     const query = {
-      text:
-        'INSERT into "public".recipe (image, name, "DESC", ingredients, rating, instructions, notes) VALUES($1, $2, $3, $4, $5, $6, $7)',
+      text: 'INSERT into "public".recipe (image, name, "DESC", ingredients, rating, instructions, notes) VALUES($1, $2, $3, $4, $5, $6, $7)',
       values: [
         recipe["image"],
         recipe["recipeName"],
